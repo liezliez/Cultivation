@@ -88,7 +88,7 @@
                                 <p> Ayam Geprek Crisbar adalah populer makan yang berfokus pada Ayam
                                     geprek crispy dimana kita dapat memilih sendiri sambal dan topping ..
                                 </p>
-                                <a href="<?php echo base_url('/pages/tempatkuliner-details.php') ?>"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="/tempatkuliner.php"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
