@@ -1,0 +1,20 @@
+CRITICAL - 2021-04-07 23:56:05 --> syntax error, unexpected token "/"
+#0 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\Common.php(1217): CodeIgniter\View\View->render('/pages/home', Array, true)
+#2 F:\xamp\htdocs\cultivation\app\Controllers\Pages.php(9): view('/pages/home')
+#3 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Pages->index()
+#4 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#5 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 F:\xamp\htdocs\cultivation\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#7 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('F:\\xamp\\htdocs\\...')
+#8 {main}
+CRITICAL - 2021-04-07 23:56:08 --> syntax error, unexpected token "/"
+#0 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\Common.php(1217): CodeIgniter\View\View->render('/pages/home', Array, true)
+#2 F:\xamp\htdocs\cultivation\app\Controllers\Pages.php(9): view('/pages/home')
+#3 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Pages->index()
+#4 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#5 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 F:\xamp\htdocs\cultivation\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#7 F:\xamp\htdocs\cultivation\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('F:\\xamp\\htdocs\\...')
+#8 {main}
