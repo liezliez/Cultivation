@@ -214,7 +214,7 @@
                     </div>
                     <div class="anime__details__form">
                         <div class="section-title">
-                            <h5>Your Comment</h5>
+                            <h5>Your Review</h5>
                         </div>
                         <form action="#">
                             <textarea placeholder="Your Comment"></textarea>

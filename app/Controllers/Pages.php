@@ -14,6 +14,18 @@ class Pages extends BaseController
 	}
 	public function details()
 	{
-		return view('/pages/tempatkuliner-details');
+		return view('/pages/tempatkuliner');
+	}
+	public function login()
+	{
+		return view('/pages/login');
+	}
+	public function loginAdmin()
+	{
+		return view('/pages/loginAdmin');
+	}
+	public function signup()
+	{
+		return view('/pages/signup');
 	}
 }
