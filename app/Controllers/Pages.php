@@ -4,21 +4,27 @@ namespace App\Controllers;
 
 class Pages extends BaseController
 {
-	public function index()
-	{
-		return view('/pages/home');
-	}
+
 	public function home()
 	{
-		return view('/pages/home');
+		$data = [
+			'title' => 'Cultivation | Cari Tempat Kulinermu Disini'
+		];
+		return view('/pages/home', $data);
 	}
 	public function details()
 	{
-		return view('/pages/tempatkuliner');
+		$data = [
+			'title' => 'Details | TempatK'
+		];
+		return view('/pages/tempatkuliner', $data);
 	}
 	public function login()
 	{
-		return view('/pages/login');
+		$data = [
+			'title' => 'Cultivation | Login'
+		];
+		return view('/pages/login', $data);
 	}
 	public function loginAdmin()
 	{
@@ -26,6 +32,9 @@ class Pages extends BaseController
 	}
 	public function signup()
 	{
-		return view('/pages/signup');
+		$data = [
+			'title' => 'Cultivation | Sign-Up'
+		];
+		return view('/pages/signup', $data);
 	}
 }
