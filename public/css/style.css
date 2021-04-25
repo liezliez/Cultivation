@@ -461,7 +461,6 @@ ol {
   border-radius: 5px;
 }
 
-
 .hero__text {
   position: relative;
   z-index: 9;
@@ -1336,6 +1335,24 @@ ol {
   font-size: 15px;
   color: #b7b7b7;
   display: inline-block;
+}
+
+/*---------------------
+    Table
+-----------------------*/
+.title-table {
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: 48px;
+  margin: 14px;
+}
+
+.image-table {
+  width: 300px;
+}
+
+.table > tbody > tr > * {
+  vertical-align: middle;
 }
 
 /*---------------------

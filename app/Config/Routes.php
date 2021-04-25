@@ -37,6 +37,7 @@ $routes->get('/signup', 'Pages::signup');
 $routes->get('/index', 'Pages::home');
 $routes->get('/details', 'Pages::details');
 $routes->get('/admin', 'Pages::loginAdmin');
+$routes->get('/tempat-kuliner', 'TempatK::index');
 
 
 
