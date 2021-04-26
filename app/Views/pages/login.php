@@ -3,9 +3,7 @@
 <!DOCTYPE html>
 <html lang="english">
 
-
 <?= $this->section('content'); ?>
-
 <!-- Normal Breadcrumb Begin -->
 <section class="normal-breadcrumb set-bg" data-setbg="img/food.jpg">
     <div class="container">
@@ -45,7 +43,7 @@
             <div class="col-lg-6">
                 <div class="login__register">
                     <h3>Belum Punya Akun?</h3>
-                    <a href="#" class="primary-btn">Registrasi Sekarang</a>
+                    <a href="/signup" class="primary-btn">Registrasi Sekarang</a>
                 </div>
             </div>
         </div>

@@ -1340,12 +1340,6 @@ ol {
 /*---------------------
     Table
 -----------------------*/
-.title-table {
-  color: white;
-  font-family: "Oswald", sans-serif;
-  font-size: 48px;
-  margin: 14px;
-}
 
 .image-table {
   width: 200px;
@@ -1962,6 +1956,33 @@ ol {
   text-align: center;
 }
 
+.signup__word h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
+  display: block;
+}
+.signup__word h3 a {
+  color: #e53637;
+}
+
+.signup__word h2 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: "Oswald", sans-serif;
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+}
+
+.img-container {
+  text-align: center;
+  display: block;
+}
 /*---------------------
   Footer
 -----------------------*/

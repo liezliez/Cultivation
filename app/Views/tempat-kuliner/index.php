@@ -4,7 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="title-table">Daftar Tempat Kuliner</h2>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="section-title">
+                    <h4 style="margin-top: 32px;">Daftar Tempat Kuliner</h4>
+                </div>
+            </div>
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
