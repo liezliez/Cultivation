@@ -1348,7 +1348,10 @@ ol {
 }
 
 .image-table {
-  width: 300px;
+  width: 200px;
+  height: 300px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .table > tbody > tr > * {

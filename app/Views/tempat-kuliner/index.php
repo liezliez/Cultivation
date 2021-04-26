@@ -15,13 +15,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td class="image-table"> <img src="/img/tempat-kuliner/dapoer-kenzie.jpg" alt=""> </td>
-                        <td> Ayam Baghdad </td>
-                        <td> <a href="" class="btn btn-success">Detail</a></td>
-                    </tr>
-
+                    <?php $i = 1; ?>
+                    <?php foreach ($tempatkuliner as $tempatk) : ?>
+                        <tr>
+                            <th scope="row"><?= $i++; ?></th>
+                            <td class="image-table"> <img src="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>" alt=""> </td>
+                            <td> <?= $tempatk['nama']; ?> </td>
+                            <td> <a href="" class="btn btn-success">Detail</a></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
