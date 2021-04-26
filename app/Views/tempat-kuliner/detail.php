@@ -1,5 +1,4 @@
 <?= $this->extend('layout/template'); ?>
-
 <!DOCTYPE html>
 <html lang="english">
 
@@ -10,9 +9,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
-                    <a href="./index.html"><i class="fa fa-home"></i> Homepage</a>
-                    <a href="./categories.html">Kategori</a>
-                    <span>Murah</span>
+                    <a href="/"><i class="fa fa-home"></i> Homepage</a>
+                    <a href="/tempat-kuliner">Tempat Kuliner</a>
+                    <span><?= $tempatk['nama']; ?></span>
                 </div>
             </div>
         </div>
@@ -26,7 +25,7 @@
         <div class="anime__details__content">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="anime__details__pic set-bg" data-setbg="img/tempat-kuliner/warteg-pengkolan.jpg">
+                    <div class="anime__details__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
                     </div>
@@ -34,8 +33,8 @@
                 <div class="col-lg-9">
                     <div class="anime__details__text">
                         <div class="anime__details__title">
-                            <h3>Warteg Pengkolan</h3>
-                            <span>Jl.Sukabirus No.69, Depan masjid tepat di pengkolan</span>
+                            <h3><?= $tempatk['nama']; ?></h3>
+                            <span><?= $tempatk['alamat']; ?></span>
                         </div>
                         <div class="anime__details__rating">
                             <div class="rating">
@@ -47,13 +46,7 @@
                             </div>
                             <span>20.699 Votes</span>
                         </div>
-                        <p> Warpeng atau Warteg Pengkolan adalah Warung nasi tegal yang terkenal dikalangan mahasiswa yang memilih
-                            untuk kost disekitaran jalan sukabirus sebagai warung nasi yang murah dan enak.
-                            bagi para mahasiswa-mahasiswi pecinta warung nasi tegal, cita rasa, murah dan porsi yang banyak sudah menjadi
-                            point utama adn nilai jual bagi warteg pengkolan.
-                            Menu yang disediakan berbagai macam, tergantung hari apa kita datang kesana. Sayur Tahu dan Sayur Singkong menjadi menu primadona disini
-                            Warung ini buka sampai malam, hanya saja diatas jam 7 malam biasanya makanan telah habis sehingga kami menganjurkan datang di pagi atau siang hari.
-                        </p>
+                        <p><?= $tempatk['deskripsi']; ?></p>
                         <div class="anime__details__widget">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
@@ -76,7 +69,10 @@
                         <div class="anime__details__btn">
                             <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
                             <a href="#" class="watch-btn"><span>Beri Review</span> <i class="fa fa-angle-right"></i></a>
+                            <a href="#" class="ml-2 follow-btn"></i> Edit</a>
+                            <a href="#" class="watch-btn"><span>Delete</span></a>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -1,6 +1,9 @@
 <?= $this->extend('layout/template'); ?>
 
+
 <?= $this->section('content'); ?>
+
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -9,28 +12,36 @@
                     <h4 style="margin-top: 32px;">Daftar Tempat Kuliner</h4>
                 </div>
             </div>
-            <table class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="trending__product">
+                <div class="row">
                     <?php $i = 1; ?>
                     <?php foreach ($tempatkuliner as $tempatk) : ?>
-                        <tr>
-                            <th scope="row"><?= $i++; ?></th>
-                            <td class="image-table"> <img src="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>" alt=""> </td>
-                            <td> <?= $tempatk['nama']; ?> </td>
-                            <td> <a href="" class="btn btn-success">Detail</a></td>
-                        </tr>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
+                                    <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                        <div class="ep">5k - 20k</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Kenyang</li>
+                                            <li>Nyaman</li>
+                                            <li>Murah</li>
+                                        </ul>
+                                        <h5><a href="#"><?= $tempatk['nama']; ?></a></h5>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
                     <?php endforeach; ?>
-                </tbody>
-            </table>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
+
 <?= $this->endSection(); ?>
