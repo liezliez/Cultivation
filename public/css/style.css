@@ -1342,8 +1342,7 @@ ol {
 -----------------------*/
 
 .image-table {
-  width: 200px;
-  height: 300px;
+  width: 100px;
   background-position: center center;
   background-repeat: no-repeat;
 }
