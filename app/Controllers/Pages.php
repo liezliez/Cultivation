@@ -37,4 +37,11 @@ class Pages extends BaseController
 		];
 		return view('/pages/signup', $data);
 	}
+	public function tentangkami()
+	{
+		$data = [
+			'title' => 'Tentangkami | Tentang-Kami'
+		];
+		return view('/pages/tentangkami', $data);
+	}
 }

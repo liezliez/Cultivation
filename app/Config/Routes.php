@@ -55,6 +55,9 @@ $routes->get('/tempat-kuliner/tambah', 'Tempatk::create');
 $routes->get('/tempat-kuliner', 'Tempatk::index');
 $routes->get('/tempat-kuliner/(:segment)', 'TempatK::detail/$1');
 
+/* Tentang Kami */
+$routes->get('/tentangkami', 'Pages::tentangkami');
+
 
 
 
