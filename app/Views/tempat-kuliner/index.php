@@ -10,8 +10,14 @@
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="section-title">
                     <h4 style="margin-top: 32px;">Daftar Tempat Kuliner</h4>
+                    <br>
+                    <div class="anime__details__btn mx-2">
+                        <a href="/tempat-kuliner/tambah" class="follow-btn">Tambah</a>
+                        <a href="/tempat-kuliner/edit" class="follow-btn">Edit</a>
+                    </div>
                 </div>
             </div>
+
             <div class="trending__product">
                 <div class="row">
                     <?php $i = 1; ?>

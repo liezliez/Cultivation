@@ -2,13 +2,15 @@
 
 namespace App\Controllers;
 
+use \App\Models\TempatkulinerModel;
+
 class TempatK extends BaseController
 {
-    protected $tempatkuliner;
+    protected $tempatkulinerModel;
 
     public function __construct()
     {
-        $this->TempatkulinerModel = new \App\Models\TempatkulinerModel();
+        $this->tempatkulinerModel = new TempatkulinerModel();
     }
 
     public function index()
@@ -16,7 +18,7 @@ class TempatK extends BaseController
 
         $data = [
             'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->TempatkulinerModel->getTempatk()
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk()
         ];
 
         return view('tempat-kuliner/index', $data);
@@ -27,8 +29,17 @@ class TempatK extends BaseController
 
         $data = [
             'title' => 'Detail Tempat Kuliner',
-            'tempatk' => $this->TempatkulinerModel->getTempatk($slug)
+            'tempatk' => $this->tempatkulinerModel->getTempatk($slug)
         ];
         return view('tempat-kuliner/detail', $data);
+    }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Tambah Tempat Kuliner'
+        ];
+
+        return view('tempat-kuliner/create', $data);
     }
 }

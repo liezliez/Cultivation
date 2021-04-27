@@ -69,8 +69,6 @@
                         <div class="anime__details__btn">
                             <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
                             <a href="#" class="watch-btn"><span>Beri Review</span> <i class="fa fa-angle-right"></i></a>
-                            <a href="#" class="ml-2 follow-btn"></i> Edit</a>
-                            <a href="#" class="watch-btn"><span>Delete</span></a>
                         </div>
 
                     </div>
