@@ -31,6 +31,12 @@ class TempatK extends BaseController
             'title' => 'Detail Tempat Kuliner',
             'tempatk' => $this->tempatkulinerModel->getTempatk($slug)
         ];
+
+        /* Jika gak ada */
+        if (empty($data['tempatk'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Nama Tempat ' . $slug . ' Tidak Ditemukan');
+        }
+
         return view('tempat-kuliner/detail', $data);
     }
 
@@ -45,6 +51,17 @@ class TempatK extends BaseController
 
     public function save()
     {
-        dd($this->request->getVar());
+        // $this->request->getVar();
+
+        $slug = url_title($this->request->getVar('nama'), '-', true);
+
+        $this->tempatkulinerModel->save([
+            'nama' => $this->request->getVar('nama'),
+            'slug' => $slug,
+            'pemilik' => $this->request->getVar('pemilik'),
+            'alamat' => $this->request->getVar('alamat'),
+            'gambar' => $this->request->getVar('gambar')
+        ]);
+        return redirect()->to('/tempat-kuliner');
     }
 }
