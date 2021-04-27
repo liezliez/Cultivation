@@ -35,25 +35,20 @@ $routes->setAutoRoute(true);
 
 
 $routes->get('/', 'Pages::home');
-
-$routes->get('/admin', 'Pages::loginAdmin');
+$routes->get('/tentang-kami', 'Pages::tentangKami');
+$routes->get('/tempat-kuliner', 'Tempatk::index');
 
 /* Login dan Signup */
 
 $routes->get('/login', 'Pages::login');
 $routes->get('/signup', 'Pages::signup');
 
-
-
-
-/* CRUD */
+/* Tempat Kuliner Function */
 
 $routes->get('/tempat-kuliner/tambah', 'Tempatk::create');
-
-/* Tempat Kuliner */
-
-$routes->get('/tempat-kuliner', 'Tempatk::index');
 $routes->get('/tempat-kuliner/(:segment)', 'TempatK::detail/$1');
+
+
 
 
 
