@@ -15,7 +15,8 @@
         <div class="row">
             <div class="col-lg-10">
                 <div class="create__form">
-                    <form>
+                    <form action="/TempatK/save" method="POST">
+                        <?= csrf_field(); ?>
                         <!-- Nama Tempat Kuliner -->
                         <div class="form-group row">
                             <label for="nama" class="col-sm-3 col-form-label">
@@ -24,49 +25,45 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nama" name="nama">
+                                <input type="text" class="form-control" id="nama" name="nama" autofocus>
                             </div>
                         </div>
                         <!-- Pemilik -->
                         <div class="form-group row">
-                            <label for="nama" class="col-sm-3 col-form-label">
+                            <label for="pemilik" class="col-sm-3 col-form-label">
                                 <div class="create-title">
                                     <h4>Pemilik : </h4>
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="Pemilik" name="Pemilik">
+                                <input type="text" class="form-control" id="pemilik" name="pemilik">
                             </div>
                         </div>
                         <!-- Alamat -->
                         <div class="form-group row">
-                            <label for="Alamat" class="col-sm-3 col-form-label">
+                            <label for="alamat" class="col-sm-3 col-form-label">
                                 <div class="create-title">
                                     <h4>Alamat : </h4>
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="Alamat" name="Alamat">
+                                <input type="text" class="form-control" id="alamat" name="alamat">
                             </div>
                         </div>
-
-
                         <div class="form-group row">
-                            <div class="col-sm-2">Checkbox</div>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                    <label class="form-check-label" for="gridCheck1">
-                                        Example checkbox
-                                    </label>
+                            <label for="gambar" class="col-sm-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Gambar : </h4>
                                 </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="gambar" name="gambar">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Sign in</button>
-                            </div>
+                        <div class="col offset-md-9">
+                            <button type="submit" class="site-btn mb-4">Tambah Data</button>
                         </div>
+
                     </form>
                 </div>
             </div>

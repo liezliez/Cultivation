@@ -42,4 +42,9 @@ class TempatK extends BaseController
 
         return view('tempat-kuliner/create', $data);
     }
+
+    public function save()
+    {
+        dd($this->request->getVar());
+    }
 }
