@@ -10,6 +10,11 @@
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="section-title">
                     <h4 style="margin-top: 32px;">Daftar Tempat Kuliner</h4>
+                    <?php if (session()->getFlashdata('pesan')) : ?>
+                        <div class="alert alert-success mt-4" role="alert">
+                            <?= session()->getFlashdata('pesan'); ?>
+                        </div>
+                    <?php endif; ?>
                     <br>
                     <div class="anime__details__btn mx-2">
                         <a href="/tempat-kuliner/tambah" class="follow-btn">Tambah</a>

@@ -62,6 +62,7 @@ class TempatK extends BaseController
             'alamat' => $this->request->getVar('alamat'),
             'gambar' => $this->request->getVar('gambar')
         ]);
+        session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
         return redirect()->to('/tempat-kuliner');
     }
 }
