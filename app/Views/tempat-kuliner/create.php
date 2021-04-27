@@ -9,6 +9,8 @@
                 <br>
             </div>
         </div>
+
+
     </div>
     <!-- Signup Section Begin -->
     <div class="container">
@@ -25,7 +27,10 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nama" name="nama" autofocus>
+                                <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama" autofocus value="<?= old('nama'); ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('nama'); ?>
+                                </div>
                             </div>
                         </div>
                         <!-- Pemilik -->
@@ -36,7 +41,10 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="pemilik" name="pemilik">
+                                <input type="text" class="form-control <?= ($validation->hasError('pemilik')) ? 'is-invalid' : ''; ?>" id="pemilik" name="pemilik" value="<?= old('pemilik'); ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('pemilik'); ?>
+                                </div>
                             </div>
                         </div>
                         <!-- Alamat -->
@@ -47,7 +55,10 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="alamat" name="alamat">
+                                <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('alamat'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -57,7 +68,10 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="gambar" name="gambar">
+                                <input type="text" class="form-control <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''; ?>" id="gambar" name="gambar" value="<?= old('gambar'); ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('gambar'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="col offset-md-9">

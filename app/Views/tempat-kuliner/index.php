@@ -16,7 +16,7 @@
                         </div>
                     <?php endif; ?>
                     <br>
-                    <div class="anime__details__btn mx-2">
+                    <div class="anime__details__btn">
                         <a href="/tempat-kuliner/tambah" class="follow-btn">Tambah</a>
                         <a href="/tempat-kuliner/edit" class="follow-btn">Edit</a>
                     </div>
@@ -44,12 +44,10 @@
                                         <h5><a href="#"><?= $tempatk['nama']; ?></a></h5>
                                     </div>
                                 </a>
-
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             </div>
         </div>
     </div>

@@ -43,7 +43,8 @@ class TempatK extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Tambah Tempat Kuliner'
+            'title' => 'Tambah Tempat Kuliner',
+            'validation' => \Config\Services::Validation()
         ];
 
         return view('tempat-kuliner/create', $data);
@@ -52,9 +53,39 @@ class TempatK extends BaseController
     public function save()
     {
         // $this->request->getVar();
+        // validasi
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required|is_unique[tempatkuliner.nama]',
+                'errors' => [
+                    'required' => '{field} harus diisi',
+                    'is_unique' => '{field} tempat kuliner telah terdaftar'
+                ]
+            ],
+            'pemilik' => [
+                'rules' => 'required[tempatkuliner.pemilik]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'alamat' => [
+                'rules' => 'required[tempatkuliner.alamat]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'gambar' => [
+                'rules' => 'required[tempatkuliner.gambar]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/tempat-kuliner/tambah')->withInput()->with('validation', $validation);
+        }
 
         $slug = url_title($this->request->getVar('nama'), '-', true);
-
         $this->tempatkulinerModel->save([
             'nama' => $this->request->getVar('nama'),
             'slug' => $slug,
