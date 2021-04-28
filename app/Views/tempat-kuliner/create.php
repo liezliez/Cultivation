@@ -17,8 +17,11 @@
         <div class="row">
             <div class="col-lg-10">
                 <div class="create__form">
-                    <form action="/TempatK/save" method="POST">
+                    <form action="/TempatK/save" method="POST" enctype="multipart/form-data">
+
+                        <!-- cross section code igniter -->
                         <?= csrf_field(); ?>
+
                         <!-- Nama Tempat Kuliner -->
                         <div class="form-group row">
                             <label for="nama" class="col-sm-3 col-form-label">
@@ -33,6 +36,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Pemilik -->
                         <div class="form-group row">
                             <label for="pemilik" class="col-sm-3 col-form-label">
@@ -47,6 +51,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Alamat -->
                         <div class="form-group row">
                             <label for="alamat" class="col-sm-3 col-form-label">
@@ -61,16 +66,24 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Gambar -->
                         <div class="form-group row">
                             <label for="gambar" class="col-sm-3 col-form-label">
                                 <div class="create-title">
                                     <h4>Gambar : </h4>
                                 </div>
                             </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''; ?>" id="gambar" name="gambar" value="<?= old('gambar'); ?>">
-                                <div class="invalid-feedback">
-                                    <?= $validation->getError('gambar'); ?>
+                            <div class="col-sm-2">
+                                <img src="/img/tempat-kuliner/default.jpg" alt="" class="img-thumbnail img-preview">
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''; ?>" id="gambar" name="gambar" onchange="previewGambar()">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('gambar'); ?>
+                                    </div>
+                                    <label class="custom-file-label" for="gambar">Pilih gambar..</label>
                                 </div>
                             </div>
                         </div>

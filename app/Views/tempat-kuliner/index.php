@@ -30,8 +30,7 @@
                     <?php endif; ?>
                     <br>
                     <div class="anime__details__btn">
-                        <a href="/tempat-kuliner/tambah" class="follow-btn">Tambah</a>
-                        <a href="/tempat-kuliner/edit" class="follow-btn">Edit</a>
+                        <a href="/tempat-kuliner/tambah" class="tambah-btn">Tambah</a>
                     </div>
                 </div>
             </div>

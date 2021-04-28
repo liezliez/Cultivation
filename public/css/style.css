@@ -1295,6 +1295,37 @@ i:hover {
   margin-right: 1px;
 }
 
+.anime__details__btn .tambah-btn {
+  font-size: 13px;
+  color: #ffffff;
+  background: #e53637;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  border-radius: 4px;
+  margin-right: 11px;
+}
+.anime__details__btn .tambah-btn:hover {
+  background: #850a0a;
+}
+.anime__details__btn .watch-btn span {
+  font-size: 13px;
+  color: #ffffff;
+  background: #e53637;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  border-radius: 4px 0 0 4px;
+  margin-right: 1px;
+}
+.anime__details__btn .watch-btn span:hover {
+  background: #850a0a;
+}
+
 .anime__details__btn .watch-btn i {
   font-size: 20px;
   display: inline-block;
