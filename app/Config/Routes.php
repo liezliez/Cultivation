@@ -46,7 +46,9 @@ $routes->get('/signup', 'Pages::signup');
 /* Tempat Kuliner Function */
 
 $routes->get('/tempat-kuliner/tambah', 'Tempatk::create');
-$routes->get('/tempat-kuliner/(:segment)', 'TempatK::detail/$1');
+$routes->get('/tempat-kuliner/edit/(:segment)', 'Tempatk::edit/$1');
+$routes->delete('/tempat-kuliner/(:num)', 'TempatK::delete/$1');
+$routes->get('/tempat-kuliner/(:any)', 'TempatK::detail/$1');
 
 
 
