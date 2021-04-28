@@ -31,14 +31,28 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+
+
 $routes->get('/', 'Pages::home');
-$routes->get('/login', 'Pages::login');
-$routes->get('/signup', 'Pages::signup');
-$routes->get('/index', 'Pages::home');
-$routes->get('/admin', 'Pages::loginAdmin');
+$routes->get('/tentang-kami', 'Pages::tentangKami');
 $routes->get('/tempat-kuliner', 'Tempatk::index');
 
-$routes->get('/tempat-kuliner/(:segment)', 'TempatK::detail/$1');
+/* Login dan Signup */
+
+$routes->get('/login', 'Pages::login');
+$routes->get('/signup', 'Pages::signup');
+
+/* Tempat Kuliner Function */
+
+$routes->get('/tempat-kuliner/tambah', 'Tempatk::create');
+$routes->get('/tempat-kuliner/edit/(:segment)', 'Tempatk::edit/$1');
+$routes->delete('/tempat-kuliner/(:num)', 'TempatK::delete/$1');
+$routes->get('/tempat-kuliner/(:any)', 'TempatK::detail/$1');
+
+
+
+
 
 
 

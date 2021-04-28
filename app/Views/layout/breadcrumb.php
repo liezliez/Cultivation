@@ -13,4 +13,3 @@
     </div>
 </div>
 <!-- Breadcrumb End -->
-<?= $this->section('content'); ?>

@@ -195,6 +195,10 @@ ol {
   padding: 12px 30px;
 }
 
+.site-btn:hover {
+  background: #850a0a;
+}
+
 /* Preloder */
 
 #preloder {
@@ -334,6 +338,195 @@ ol {
 }
 
 /*---------------------
+  Create
+-----------------------*/
+
+.create-title {
+  margin-bottom: 30px;
+}
+
+.create-title h4,
+.create-title h5 {
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 21px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+}
+
+.create {
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+
+.create__form {
+  position: relative;
+  padding-left: 145px;
+}
+
+/* .create__form:after {
+  position: absolute;
+  right: -14px;
+  top: -40px;
+  height: 500px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  content: "";
+} */
+
+.create__form h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 30px;
+}
+
+.create__form form .input__item {
+  position: relative;
+  width: 370px;
+  margin-bottom: 20px;
+}
+
+.create__form form .input__item:before {
+  position: absolute;
+  left: 50px;
+  top: 10px;
+  height: 30px;
+  width: 1px;
+  background: #b7b7b7;
+  content: "";
+}
+
+.create__form form .input__item input {
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+  color: #b7b7b7;
+  background: #ffffff;
+  border: none;
+  padding-left: 76px;
+}
+
+.create__form form .input__item input::-webkit-input-placeholder {
+  color: #b7b7b7;
+}
+
+.create__form form .input__item input::-moz-placeholder {
+  color: #b7b7b7;
+}
+
+.create__form form .input__item input:-ms-input-placeholder {
+  color: #b7b7b7;
+}
+
+.create__form form .input__item input::-ms-input-placeholder {
+  color: #b7b7b7;
+}
+
+.create__form form .input__item input::placeholder {
+  color: #b7b7b7;
+}
+
+.create__form form .input__item span {
+  color: #b7b7b7;
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+}
+
+.create__form form button {
+  border-radius: 0;
+  margin-top: 10px;
+}
+
+.create__form .forget_pass {
+  font-size: 15px;
+  color: #ffffff;
+  display: inline-block;
+  position: absolute;
+  right: 60px;
+  bottom: 12px;
+}
+
+.create__register {
+  padding-left: 30px;
+}
+
+.create__register h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 30px;
+}
+
+.create__register .primary-btn {
+  background: #e53637;
+  padding: 12px 42px;
+}
+
+.create__social {
+  padding-top: 52px;
+}
+
+.create__social__links {
+  text-align: center;
+}
+
+.create__social__links span {
+  color: #ffffff;
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.create__social__links ul li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.create__social__links ul li:last-child {
+  margin-bottom: 0;
+}
+
+.create__social__links ul li a {
+  color: #ffffff;
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 460px;
+  padding: 14px 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+.create__social__links ul li a.facebook {
+  background: #4267b2;
+}
+
+.create__social__links ul li a.google {
+  background: #ff4343;
+}
+
+.create__social__links ul li a.twitter {
+  background: #1da1f2;
+}
+
+.create__social__links ul li a i {
+  font-size: 20px;
+  position: absolute;
+  left: 32px;
+  top: 14px;
+}
+
+/*---------------------
   Header
 -----------------------*/
 
@@ -434,10 +627,9 @@ ol {
 }
 
 .header__right a {
-  display: inline-block;
-  font-size: 18px;
-  color: #ffffff;
-  margin-right: 30px;
+  font-size: 15px;
+  color: #b7b7b7;
+  font-weight: 700;
 }
 
 .header__right a:last-child {
@@ -526,6 +718,11 @@ ol {
   padding: 14px 20px;
   border-radius: 4px 0 0 4px;
   margin-right: 1px;
+}
+
+.hero__text a span:hover,
+i:hover {
+  background: #850a0a;
 }
 
 .hero__text a i {
@@ -1082,7 +1279,9 @@ ol {
   border-radius: 4px;
   margin-right: 11px;
 }
-
+.anime__details__btn .follow-btn:hover {
+  background: #850a0a;
+}
 .anime__details__btn .watch-btn span {
   font-size: 13px;
   color: #ffffff;

@@ -68,10 +68,15 @@
                         </div>
                         <div class="anime__details__btn">
                             <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                            <a href="#" class="watch-btn"><span>Beri Review</span> <i class="fa fa-angle-right"></i></a>
-                            <a href="#" class="ml-2 follow-btn"></i> Edit</a>
-                            <a href="#" class="watch-btn"><span>Delete</span></a>
+                            <a href="#" class="watch-btn"><span> Beri Review</span></a>
+                            <a href="/tempat-kuliner/edit/<?= $tempatk['slug']; ?>" class="follow-btn ml-2"> <i class="fa fa-pencil-square-o" aria-hidden="true"> </i> Edit</a>
+                            <form action="/tempat-kuliner/<?= $tempatk['id']; ?>" method="POST" class="d-inline">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="follow-btn" onclick="return confirm('apakah anda yakin?');">Delete</button>
+                            </form>
                         </div>
+
 
                     </div>
                 </div>
