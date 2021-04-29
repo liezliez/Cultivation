@@ -20,10 +20,18 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-6 col-md-8 col-sm-8">
                 <div class="section-title">
                     <h4 style="margin-top: 32px;">Daftar User</h4>
                 </div>
+                <form action="" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Masukan Keyword Pencarian.." aria-label="Recipient's username" aria-describedby="basic-addon2" name="keyword">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <table class="table table-hover table-dark">
                 <thead>

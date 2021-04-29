@@ -15,11 +15,20 @@ class User extends BaseController
 
     public function index()
     {
+        // Pagination nomor
         $currentPage = $this->request->getVar('page_user') ? $this->request->getVar('page_user') :
             1;
+        // Searching
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $user = $this->userModel->search($keyword);
+        } else {
+            $user = $this->userModel;
+        }
+
         $data = [
             'title' => 'Daftar User',
-            'user' => $this->userModel->paginate(8, 'user'),
+            'user' => $user->paginate(8, 'user'),
             'pager' => $this->userModel->pager,
             'currentPage' => $currentPage
         ];
