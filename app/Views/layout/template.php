@@ -88,6 +88,27 @@
     <script src="<?php echo base_url('js/owl.carousel.min.js') ?>"></script>
     <script src="<?php echo base_url('js/main.js') ?>"></script>
 
+    <!-- Script Tambahan Urang -->
+
+    <!-- Buat Priview Gambar di Create -->
+    <script>
+        function previewGambar() {
+            const gambar = document.querySelector('#gambar');
+            const gambarLabel = document.querySelector('.custom-file-label');
+            const gambarPreview = document.querySelector('.img-preview');
+
+            gambarLabel.textContent = gambar.files[0].name;
+
+            const fileGambar = new FileReader();
+            fileGambar.readAsDataURL(gambar.files[0]);
+
+            fileGambar.onload = function(e) {
+                gambarPreview.src = e.target.result;
+            }
+
+        }
+    </script>
+
 
 </body>
 
