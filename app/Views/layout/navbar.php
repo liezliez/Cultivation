@@ -18,6 +18,7 @@
                             <!-- <li class="active"><a href="/">Homepage</a></li> -->
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
+                            <li><a href="/User/index">User</a></li>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./categories.html">Murah</a></li>
@@ -28,7 +29,7 @@
                                     <li><a href="./login.html">populer Nongkrong</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="/tentang-kami">Tentang Kami</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -36,7 +37,8 @@
             <div class="col-lg-2">
                 <div class="header__right">
                     <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    <a href="/login" class="login-switch"><span class="icon_profile"></a>
+                    <a href="/login" class="login-switch ml-4 mr-0"><span class="icon_profile"></a>
+                    <a href="/login" class="ml-1">Login</a>
                 </div>
             </div>
         </div>
