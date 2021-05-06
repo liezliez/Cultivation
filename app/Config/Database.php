@@ -30,6 +30,7 @@ class Database extends Config
 	 *
 	 * @var array
 	 */
+	//Menggunakan database lokal
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',

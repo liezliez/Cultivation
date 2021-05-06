@@ -8,11 +8,13 @@ class TempatK extends BaseController
 {
     protected $tempatkulinerModel;
 
+    // Membuat model tempat kuliner baru
     public function __construct()
     {
         $this->tempatkulinerModel = new TempatkulinerModel();
     }
 
+    // Menampilkan view home untuk tempat kuliner
     public function index()
     {
 
@@ -24,6 +26,7 @@ class TempatK extends BaseController
         return view('tempat-kuliner/index', $data);
     }
 
+    //Menampilkan detail tempat kuliner berdasarkan Slug
     public function detail($slug)
     {
 
@@ -40,6 +43,7 @@ class TempatK extends BaseController
         return view('tempat-kuliner/detail', $data);
     }
 
+    //Menampilkan halaman tambah tempat kuliner
     public function create()
     {
         $data = [
@@ -50,6 +54,7 @@ class TempatK extends BaseController
         return view('tempat-kuliner/create', $data);
     }
 
+    //Fungsi untuk menyimpan hasil tambah tempat kuliner ke database setelah validasi
     public function save()
     {
         // $this->request->getVar();
@@ -118,6 +123,7 @@ class TempatK extends BaseController
         return redirect()->to('/tempat-kuliner');
     }
 
+    //fungsi untuk menghapus tempat kuliner
     public function delete($id)
     {
         // hapus gambar di public
@@ -138,6 +144,7 @@ class TempatK extends BaseController
         return redirect()->to('/tempat-kuliner');
     }
 
+    //Mengubah data tempat kuliner
     public function edit($slug)
     {
         $data = [
@@ -149,6 +156,7 @@ class TempatK extends BaseController
         return view('tempat-kuliner/edit', $data);
     }
 
+    //Fungsi update data tempat kuliner setelah di validasi
     public function update($id)
     {
         // cek nama
@@ -217,7 +225,9 @@ class TempatK extends BaseController
             'alamat' => $this->request->getVar('alamat'),
             'gambar' => $namaGambar
         ]);
+        //Menampilkan pesan data berhasil diubah
         session()->setFlashdata('pesan', 'Data berhasil diubah');
+        //Mengarahkan user kembali ke "tempat kuliner"
         return redirect()->to('/tempat-kuliner');
     }
 }

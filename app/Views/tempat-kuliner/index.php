@@ -1,3 +1,4 @@
+<!-- Menggunakan template navbar -->
 <?= $this->extend('layout/template'); ?>
 
 
@@ -34,7 +35,8 @@
                     </div>
                 </div>
             </div>
-
+            
+            <!-- menampikan tempat kuliner yang paling sering dikunjungi -->
             <div class="trending__product">
                 <div class="row">
                     <?php $i = 1; ?>

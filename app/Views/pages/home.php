@@ -1,3 +1,4 @@
+//Menggunakan template navbar
 <?= $this->extend('layout/template'); ?>
 
 <!DOCTYPE html>
@@ -60,7 +61,7 @@
 </section>
 <!-- Hero Section End -->
 
-<!-- Product Section Begin -->
+<!-- Item Section Begin -->
 <section class="product spad">
     <div class="container">
         <div class="row">
@@ -377,6 +378,6 @@
         </div>
     </div>
 </section>
-<!-- Product Section End -->
+<!-- Item Section End -->
 
 <?= $this->endSection('content'); ?>

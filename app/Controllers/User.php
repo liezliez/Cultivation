@@ -4,15 +4,18 @@ namespace App\Controllers;
 
 use \App\Models\UserModel;
 
+
 class User extends BaseController
 {
     protected $userModel;
-
+    
+    //Membuat user model baru
     public function __construct()
     {
         $this->userModel = new UserModel();
     }
 
+    //Menampilkan Halaman index user
     public function index()
     {
         // Pagination nomor
