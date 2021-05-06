@@ -1,0 +1,72 @@
+<?= $this->extend('layout/template'); ?>
+
+
+
+<?= $this->section('content'); ?>
+
+<!-- Spad Picture Begin -->
+<section class="normal-breadcrumb set-bg" data-setbg="img/food.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="normal__breadcrumb__text">
+                    <h2>Tentang Kami</h2>
+                    <p>Kelompok Delapan RPL-DI </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Spad Picture End -->
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a href="/"><i class="fa fa-home"></i> Homepage</a>
+                    <span>Tentang Kami</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Blog Section Begin -->
+<div class="team-section">
+    <h1>About Us</h1>
+    <span class="border"></span>
+<div class="ps">
+    <a href="#p1"><img src="/img/blog/blog-2.jpg" alt=""></a>
+    <a href="#p2"><img src="/img/blog/blog-2.jpg" alt=""></a>
+    <a href="#p3"><img src="/img/blog/blog-2.jpg" alt=""></a>
+    <a href="#p4"><img src="/img/blog/blog-2.jpg" alt=""></a>
+</div>
+<div class="section" id="p1">
+    <span class="name">Bocil Kematian1</span>
+    <span class="border"></span>
+    <p>Suatu paragraf harus dibangun dengan sebuah ide atau topik yang jelas. Ide yang muncul ketika kamu ingin menulis sesuatu akan lebih mantap jika diuraikan dari kalimat utama kemudian ke kalimat penjelas sehingga membentuk suatu kesatuan
+    </p>
+</div>
+<div class="section" id="p2">
+    <span class="name">Bocil Kematian2</span>
+    <span class="border"></span>
+    <p>Text messaging, or texting, is the act of composing and sending electronic messages, typically consisting of alphabetic and numeric characters, between two or   
+    </p>
+</div>
+<div class="section" id="p3">
+    <span class="name">Bocil Kematian3</span>
+    <span class="border"></span>
+    <p>Send unlimited free texts and make WiFi calls from a free phone number. Download the free app or sign up online to pick your free phone number.</p>
+</div>
+<div class="section" id="p4">
+    <span class="name">Bocil Kematian4</span>
+    <span class="border"></span>
+    <p>Text refers to the actual words written in a book, newspaper, blog post, or any other written work. Pictures, charts, and other images are not text. When you read</p>
+</div>
+</div>
+<!-- Blog Section End -->
+
+<?= $this->endSection(); ?>

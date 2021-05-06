@@ -52,6 +52,9 @@ $routes->get('/tempat-kuliner/(:any)', 'TempatK::detail/$1');
 
 
 
+/* Tentang Kami */
+#$routes->get('/tentangkami', 'Pages::tentangkami');
+
 
 
 
