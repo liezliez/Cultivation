@@ -37,13 +37,13 @@
 <!-- Blog Section Begin -->
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="main">
                 <div class="service">
                     <div class="service-logo">
-                        <img src="/img/about-us/aldyan.jpg" alt=""> 
+                        <img src="/img/blog/blog-2.jpg" alt=""> 
                     </div>
-                    <h4> Aldyan </h4>
+                    <h4> Liez </h4>
                     <p>Suatu paragraf harus dibangun dengan sebuah ide atau topik yang jelas. 
                     Ide yang muncul ketika kamu ingin menulis sesuatu akan lebih mantap jika 
                     diuraikan dari kalimat utama kemudian ke kalimat penjelas sehingga membentuk 
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
         <div class="main">
                 <div class="service">
                     <div class="service-logo">
@@ -73,7 +73,7 @@
             </div>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-4">
         <div class="main">
                 <div class="service">
                     <div class="service-logo">
@@ -91,7 +91,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
         <div class="main">
                 <div class="service">
                     <div class="service-logo">

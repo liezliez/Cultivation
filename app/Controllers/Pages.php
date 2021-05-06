@@ -42,6 +42,6 @@ class Pages extends BaseController
 		$data = [
 			'title' => 'Cultivation | Tentang Kami'
 		];
-		return view('/pages/tentang-kami', $data);
+		return view('/pages/tentangkami', $data);
 	}
 }
