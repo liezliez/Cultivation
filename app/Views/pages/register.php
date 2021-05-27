@@ -26,7 +26,16 @@
             <div class="col-lg-6">
                 <div class="login__form">
                     <h3>Sign Up</h3>
-                    <form action="#">
+
+                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <h4>Error</h4>
+                            </hr />
+                            <?php echo session()->getFlashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- <form action="#">
                         <div class="input__item">
                             <input type="text" placeholder="Email address">
                             <span class="icon_mail"></span>
@@ -40,7 +49,31 @@
                             <span class="icon_lock"></span>
                         </div>
                         <button type="submit" class="site-btn">Login Now</button>
+                    </form> -->
+
+                    <form method="post" action="<?= base_url(); ?>/register/process">
+                        <?= csrf_field(); ?>
+                        <div class="mb-3">
+                            <label for="username" class="form-label"></label>
+                            <input type="text" placeholder="Username" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"></label>
+                            <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password_conf" class="form-label"></label>
+                            <input type="password" placeholder="Confirm Password" class="form-control" id="password_conf" name="password_conf">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"></label>
+                            <input type="text" placeholder="Email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="site-btn">Register</button>
+                        </div>
                     </form>
+
                     <h5>Already have an account? <a href="#">Log In!</a></h5>
                 </div>
             </div>
