@@ -30,11 +30,11 @@ class Login extends BaseController
                 ]);
                 return redirect()->to(base_url('home'));
             } else {
-                session()->setFlashdata('error', 'Username / Password Salah');
+                session()->setFlashdata('error', 'Password Salah');
                 return redirect()->back();
             }
         } else {
-            session()->setFlashdata('error', 'Username / Password Salah');
+            session()->setFlashdata('error', 'Username Salah');
             return redirect()->back();
         }
     }

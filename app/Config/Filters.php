@@ -34,7 +34,7 @@ class Filters extends BaseConfig
 			'usersAuth' => [
 				'except' => [
 					'login/*',
-					'logout/*'
+					'logout/*',
 				]
 			]
 		],
