@@ -38,6 +38,7 @@ class Filters extends BaseConfig
 					'login', 'login/*',
 					'register', 'register/*',
 					'/',
+					'tentang-kami'
 				]
 			]
 		],
