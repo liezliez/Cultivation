@@ -1,6 +1,5 @@
 <?= $this->extend('layout/template'); ?>
 
-
 <?= $this->section('content'); ?>
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">

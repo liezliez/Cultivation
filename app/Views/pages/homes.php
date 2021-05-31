@@ -1,7 +1,8 @@
-<?= $this->extend('layout/template-user'); ?>
+<?= $this->extend('layout/template'); ?>
 
 <!DOCTYPE html>
 <html lang="english">
+
 
 
 <?= $this->section('content'); ?>
@@ -15,7 +16,7 @@
                         <div class="hero__text">
                             <div class="label">Kenyang</div>
                             <div class="label">Pedas</div>
-                            <h2> Ayam Geprek Crisbar</h2>
+                            <h2> Welcome <?= session()->get('username'); ?> </h2>
                             <p> Ayam Geprek Crisbar adalah populer makan yang berfokus pada Ayam
                                 geprek crispy dimana kita dapat memilih sendiri sambal dan topping ..
                             </p>

@@ -14,8 +14,8 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
+                            <!-- QUERY NAVBAR -->
 
-                            <!-- <li class="active"><a href="/">Homepage</a></li> -->
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
@@ -35,7 +35,9 @@
             </div>
             <div class="col-lg-3">
                 <div class="header__right">
-                    <a href="/login" class="login-switch ml-4 mr-0">Login | Register <span class="icon_profile"></a>
+                    <a href="/login" class="login-switch ml-4 mr-0"><span class="icon_profile"></a>
+                    <a href="/login" class="ml-1"><?= session()->get('username'); ?> | </a>
+                    <a href="/logout" class="logout">Logout <span class="fa fa-sign-out"></span></a>
                 </div>
             </div>
         </div>

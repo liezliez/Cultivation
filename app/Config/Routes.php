@@ -32,16 +32,29 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-
-
+// Home
 $routes->get('/', 'Pages::home');
+// Tentang Kami
 $routes->get('/tentang-kami', 'Pages::tentangKami');
+// Tempat Kuliner
 $routes->get('/tempat-kuliner', 'Tempatk::index');
 
 /* Login dan Signup */
 
-$routes->get('/login', 'Pages::login');
-$routes->get('/signup', 'Pages::signup');
+$routes->get('/login', 'Login::index');
+$routes->post('/login/process', 'Login::process');
+
+// logout
+$routes->get('/logout', 'Login::logout');
+
+$routes->get('/home', 'Pages::homes');
+
+// signup
+$routes->get('/register', 'Register::index');
+$routes->post('/register/process', 'Register::process');
+
+// $routes->get('/signup', 'Pages::signup');
+
 
 /* Tempat Kuliner Function */
 
@@ -49,17 +62,6 @@ $routes->get('/tempat-kuliner/tambah', 'Tempatk::create');
 $routes->get('/tempat-kuliner/edit/(:segment)', 'Tempatk::edit/$1');
 $routes->delete('/tempat-kuliner/(:num)', 'TempatK::delete/$1');
 $routes->get('/tempat-kuliner/(:any)', 'TempatK::detail/$1');
-
-
-
-/* Tentang Kami */
-#$routes->get('/tentangkami', 'Pages::tentangkami');
-
-
-
-
-
-
 
 
 

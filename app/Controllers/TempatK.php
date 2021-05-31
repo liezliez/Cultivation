@@ -52,7 +52,6 @@ class TempatK extends BaseController
 
     public function save()
     {
-        // $this->request->getVar();
         // validasi
         if (!$this->validate([
             'nama' => [
@@ -126,14 +125,8 @@ class TempatK extends BaseController
         if ($tempatk['gambar'] != 'default.jpg') {
             unlink('img/tempat-kuliner/' . $tempatk['gambar']);
         }
-
-
         // hapus data di database
         $this->tempatkulinerModel->delete($id);
-
-
-
-
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('/tempat-kuliner');
     }
