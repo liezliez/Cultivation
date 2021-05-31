@@ -3,8 +3,11 @@
 <!DOCTYPE html>
 <html lang="english">
 
+
+
 <?= $this->section('content'); ?>
 <!-- Hero Section Begin -->
+
 <section class="hero">
     <div class="container">
         <div class="hero__slider owl-carousel">
@@ -376,6 +379,16 @@
         </div>
     </div>
 </section>
+<!-- Silahkan Login Message -->
+<?php
+$message = session()->getFlashdata('message');
+function IsNullOrEmptyString($str)
+{
+    return (!isset($str) || trim($str) === '');
+}
+if (!(IsNullOrEmptyString($message))) {
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
+?>
 <!-- Product Section End -->
-
 <?= $this->endSection('content'); ?>

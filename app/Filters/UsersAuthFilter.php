@@ -10,8 +10,9 @@ class UsersAuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (is_null(session()->get('logged_in'))) {
-            return redirect()->to(base_url('login/index'));
+        if (session()->get('logged_in') != true) {
+            session()->setFlashdata('message', 'Untuk mengakses halaman ini silahkan Login terlebih dahulu');
+            return redirect()->to(base_url('/'));
         }
     }
 
@@ -19,6 +20,8 @@ class UsersAuthFilter implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do something here
+        if (session()->get('logged_in') == true) {
+            return redirect()->to(base_url('/home'));
+        }
     }
 }
