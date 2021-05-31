@@ -12,14 +12,6 @@ class Pages extends BaseController
 		];
 		return view('/pages/home', $data);
 	}
-	public function homes()
-	{
-		$data = [
-			'title' => 'Cultivation | Cari Tempat Kulinermu Disini'
-		];
-		return view('/pages/homes', $data);
-	}
-
 	public function details()
 	{
 		$data = [

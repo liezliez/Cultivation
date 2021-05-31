@@ -19,11 +19,18 @@ class User extends Migration
 				'type'       	=> 'VARCHAR',
 				'constraint' 	=> '100',
 			],
+			'role_id'	=> [
+				'type'           => 'INT'
+			],
 			'email' 	=> [
 				'type' 			=> 'VARCHAR',
 				'constraint' 	=> '100',
 			],
 			'password' 	=> [
+				'type' 			=> 'VARCHAR',
+				'constraint' 	=> '100',
+			],
+			'gambar' 	=> [
 				'type' 			=> 'VARCHAR',
 				'constraint' 	=> '100',
 			],

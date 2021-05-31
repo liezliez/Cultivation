@@ -11,24 +11,37 @@ class Login extends BaseController
         $data = [
             'title' => 'Login | Cari Tempat Kulinermu Disini'
         ];
-        return view('/pages/login', $data);
+        return view('/auth/login', $data);
     }
     public function process()
     {
+        /* Ngambil Data dari Form */
         $users = new UsersModel();
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
+
+        /* Cari Data user di Database */
         $dataUser = $users->where([
             'username' => $username,
         ])->first();
+
         if ($dataUser) {
             if (password_verify($password, $dataUser->password)) {
                 session()->set([
                     'username' => $dataUser->username,
                     'email' => $dataUser->email,
+                    'role_id' => $dataUser->role_id,
+                    'gambar' => $dataUser->gambar,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('home'));
+                // Jika role Admin
+                if (session()->role_id == 1) {
+                    return redirect()->to(base_url('admin'));
+                }
+                // Jika role user
+                else {
+                    return redirect()->to(base_url('user'));
+                }
             } else {
                 session()->setFlashdata('error', 'Password Salah');
                 return redirect()->back();

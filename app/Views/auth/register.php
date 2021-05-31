@@ -26,7 +26,6 @@
             <div class="col-lg-6">
                 <div class="login__form">
                     <h3>Sign Up</h3>
-
                     <?php if (!empty(session()->getFlashdata('error'))) : ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <h4>Error</h4>
@@ -51,7 +50,7 @@
                         <button type="submit" class="site-btn">Login Now</button>
                     </form> -->
 
-                    <form method="post" action="<?= base_url(); ?>/register/process">
+                    <form action="/register/save" method="post" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
                         <div class="mb-3">
                             <label for="username" class="form-label"></label>
@@ -69,10 +68,24 @@
                             <label for="email" class="form-label"></label>
                             <input type="text" placeholder="Email" class="form-control" id="email" name="email">
                         </div>
+                        <!-- Gambar -->
+                        <div class="form-group row">
+                            <label for="gambar" class="form-label"></label>
+                            <div class="col-sm-12">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''; ?>" id="gambar" name="gambar" onchange="previewGambar()">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('gambar'); ?>
+                                    </div>
+                                    <label class="custom-file-label" for="gambar">Pilih gambar..</label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="mb-3">
                             <button type="submit" class="site-btn">Register</button>
                         </div>
                     </form>
+
 
                     <h5>Already have an account? <a href="#">Log In!</a></h5>
                 </div>
@@ -95,3 +108,10 @@
 </section>
 <!-- Signup Section End -->
 <?= $this->endSection('content'); ?>
+<!-- <script>
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove();
+        });
+    }, 3000);
+</script> -->

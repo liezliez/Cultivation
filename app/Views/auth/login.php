@@ -25,6 +25,13 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="login__form">
+                    <?php if (session()->getFlashdata('message')) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <h4>Berhasil</h4>
+                            </hr />
+                            <?php echo session()->getFlashdata('message'); ?>
+                        </div>
+                    <?php endif; ?>
                     <h3>Login</h3>
                     <!-- <form action="#">
                         <div class="input__item">

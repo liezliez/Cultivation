@@ -10,7 +10,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
@@ -18,6 +18,7 @@
                             <!-- <li class="active"><a href="/">Homepage</a></li> -->
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
+                            <li><a href="/User/index">User</a></li>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./categories.html">Murah</a></li>
@@ -33,9 +34,11 @@
                     </nav>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="header__right">
-                    <a href="/login" class="login-switch ml-4 mr-0">Login | Register <span class="icon_profile"></a>
+                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                    <a href="/login" class="login-switch ml-4 mr-0"><span class="icon_profile"></a>
+                    <a href="/login" class="ml-1">ADMIN </a>
                 </div>
             </div>
         </div>
