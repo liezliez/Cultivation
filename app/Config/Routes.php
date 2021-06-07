@@ -44,10 +44,11 @@ $routes->get('/tempat-kuliner', 'Tempatk::index');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/process', 'Login::process');
 
+$routes->get('/home', 'Pages::home');
+$routes->get('/admin', 'Admin::index');
+
 // logout
 $routes->get('/logout', 'Login::logout');
-
-$routes->get('/home', 'Pages::homes');
 
 // signup
 $routes->get('/register', 'Register::index');

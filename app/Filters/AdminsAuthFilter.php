@@ -6,7 +6,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class UsersAuthFilter implements FilterInterface
+class AdminsAuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
@@ -20,8 +20,8 @@ class UsersAuthFilter implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        if (session()->get('role_id') == '2') {
-            return redirect()->to(base_url('/home'));
+        if (session()->get('role_id') == '1') {
+            return redirect()->to(base_url('/admin'));
         }
     }
 }

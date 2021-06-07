@@ -379,16 +379,6 @@
         </div>
     </div>
 </section>
-<!-- Silahkan Login Message -->
-<?php
-$message = session()->getFlashdata('message');
-function IsNullOrEmptyString($str)
-{
-    return (!isset($str) || trim($str) === '');
-}
-if (!(IsNullOrEmptyString($message))) {
-    echo "<script type='text/javascript'>alert('$message');</script>";
-}
-?>
+
 <!-- Product Section End -->
 <?= $this->endSection('content'); ?>
