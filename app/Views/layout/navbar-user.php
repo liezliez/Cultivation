@@ -1,5 +1,10 @@
 <!-- Header Section Begin -->
+
+
+
+
 <header class="header">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-2">
@@ -16,7 +21,7 @@
                         <ul>
                             <!-- QUERY NAVBAR -->
 
-                            <li><a href="/">Homepage</a></li>
+                            <li><a href="/user">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">

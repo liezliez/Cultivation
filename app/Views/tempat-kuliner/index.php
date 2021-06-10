@@ -28,9 +28,13 @@
                         </div>
                     <?php endif; ?>
                     <br>
-                    <div class="anime__details__btn">
-                        <a href="/tempat-kuliner/tambah" class="tambah-btn">Tambah</a>
-                    </div>
+                    <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 1)) {
+                        echo '  <div class="anime__details__btn">
+                                <a href="/tempat-kuliner/tambah" class="tambah-btn">Tambah</a>
+                                </div>
+                            ';
+                    }
+                    ?>
                 </div>
             </div>
 

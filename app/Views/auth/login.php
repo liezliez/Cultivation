@@ -27,7 +27,6 @@
                 <div class="login__form">
                     <?php if (session()->getFlashdata('message')) : ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <h4>Berhasil</h4>
                             </hr />
                             <?php echo session()->getFlashdata('message'); ?>
                         </div>

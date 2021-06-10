@@ -46,7 +46,9 @@ class TempatK extends BaseController
             'title' => 'Tambah Tempat Kuliner',
             'validation' => \Config\Services::Validation()
         ];
-
+        if (session()->get('role_id') != 1) {
+            return redirect()->back();
+        }
         return view('tempat-kuliner/create', $data);
     }
 

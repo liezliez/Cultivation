@@ -16,7 +16,7 @@
                         <ul>
 
                             <!-- <li class="active"><a href="/">Homepage</a></li> -->
-                            <li><a href="/">Homepage</a></li>
+                            <li><a href="/admin">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
                             <li><a href="/User/index">User</a></li>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
