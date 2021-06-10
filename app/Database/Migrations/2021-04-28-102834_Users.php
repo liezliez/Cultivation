@@ -15,15 +15,22 @@ class User extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true,
 			],
-			'nama'      => [
+			'username'      => [
 				'type'       	=> 'VARCHAR',
 				'constraint' 	=> '100',
+			],
+			'role_id'	=> [
+				'type'           => 'INT'
 			],
 			'email' 	=> [
 				'type' 			=> 'VARCHAR',
 				'constraint' 	=> '100',
 			],
 			'password' 	=> [
+				'type' 			=> 'VARCHAR',
+				'constraint' 	=> '100',
+			],
+			'gambar' 	=> [
 				'type' 			=> 'VARCHAR',
 				'constraint' 	=> '100',
 			],
@@ -37,10 +44,10 @@ class User extends Migration
 			],
 		]);
 		$this->forge->addKey('id', true);
-		$this->forge->createTable('user');
+		$this->forge->createTable('users');
 	}
 	public function down()
 	{
-		$this->forge->dropTable('user');
+		$this->forge->dropTable('users');
 	}
 }

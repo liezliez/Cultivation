@@ -27,7 +27,7 @@
         <div class="loader"></div>
     </div> -->
     <!-- Navbar -->
-    <?= $this->include('layout/navbar'); ?>
+    <?= $this->include('layout/navbar-user'); ?>
 
     <!-- content -->
     <?= $this->renderSection('content'); ?>
@@ -88,7 +88,7 @@
     <script src="<?php echo base_url('js/owl.carousel.min.js') ?>"></script>
     <script src="<?php echo base_url('js/main.js') ?>"></script>
 
-    <!-- Script Tambahan -->
+    <!-- Script Tambahan Urang -->
 
     <!-- Buat Priview Gambar di Create -->
     <script>
@@ -105,6 +105,7 @@
             fileGambar.onload = function(e) {
                 gambarPreview.src = e.target.result;
             }
+
         }
     </script>
 

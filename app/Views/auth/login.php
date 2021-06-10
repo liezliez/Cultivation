@@ -25,8 +25,14 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="login__form">
+                    <?php if (session()->getFlashdata('message')) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            </hr />
+                            <?php echo session()->getFlashdata('message'); ?>
+                        </div>
+                    <?php endif; ?>
                     <h3>Login</h3>
-                    <form action="#">
+                    <!-- <form action="#">
                         <div class="input__item">
                             <input type="text" placeholder="Email address">
                             <span class="icon_mail"></span>
@@ -36,14 +42,31 @@
                             <span class="icon_lock"></span>
                         </div>
                         <button type="submit" class="site-btn">Login Sekarang</button>
-                    </form>
+                    </form> -->
+                    <main class="form-signin">
+                        <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <?php echo session()->getFlashdata('error'); ?>
+                            </div>
+                        <?php endif; ?>
+                        <form method="post" action="<?= base_url(); ?>/login/process">
+                            <?= csrf_field(); ?>
+                            <div class="mb-3">
+                                <input type="text" name="username" id="username" placeholder="Username" class="form-control" required autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="site-btn">Login</button>
+                        </form>
+                    </main>
                     <a href="#" class="forget_pass">Lupa Password</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="login__register">
                     <h3>Belum Punya Akun?</h3>
-                    <a href="/signup" class="primary-btn">Registrasi Sekarang</a>
+                    <a href="/register" class="primary-btn">Registrasi Sekarang</a>
                 </div>
             </div>
         </div>

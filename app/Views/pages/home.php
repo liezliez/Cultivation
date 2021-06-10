@@ -4,8 +4,10 @@
 <html lang="english">
 
 
+
 <?= $this->section('content'); ?>
 <!-- Hero Section Begin -->
+
 <section class="hero">
     <div class="container">
         <div class="hero__slider owl-carousel">
@@ -377,6 +379,6 @@
         </div>
     </div>
 </section>
-<!-- Product Section End -->
 
+<!-- Product Section End -->
 <?= $this->endSection('content'); ?>

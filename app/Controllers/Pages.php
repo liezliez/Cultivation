@@ -26,16 +26,12 @@ class Pages extends BaseController
 		];
 		return view('/pages/login', $data);
 	}
-	public function loginAdmin()
-	{
-		return view('/pages/loginAdmin');
-	}
-	public function signup()
+	public function register()
 	{
 		$data = [
 			'title' => 'Cultivation | Sign-Up'
 		];
-		return view('/pages/signup', $data);
+		return view('/pages/register', $data);
 	}
 	public function tentangKami()
 	{
