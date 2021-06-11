@@ -28,6 +28,7 @@ class Login extends BaseController
         if ($dataUser) {
             if (password_verify($password, $dataUser->password)) {
                 session()->set([
+                    'id' => $dataUser->id,
                     'username' => $dataUser->username,
                     'email' => $dataUser->email,
                     'role_id' => $dataUser->role_id,
