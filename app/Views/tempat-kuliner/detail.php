@@ -68,7 +68,7 @@
                         </div>
                         <div class="anime__details__btn">
                             <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                            <a href="#" class="watch-btn"><span> Beri Review</span></a>
+                            <a href="#comment-section" class="watch-btn"><span> Beri Review</span></a>
                             <a href="/tempat-kuliner/edit/<?= $tempatk['slug']; ?>" class="follow-btn ml-2"> <i class="fa fa-pencil-square-o" aria-hidden="true"> </i> Edit</a>
                             <form action="/tempat-kuliner/<?= $tempatk['id']; ?>" method="POST" class="d-inline">
                                 <?= csrf_field(); ?>
@@ -144,11 +144,13 @@
                     </div>
                 </div>
                 <div class="anime__details__form">
+                    <!-- Comment Section -->
+                    <a id="comment-section"></a>
                     <div class="section-title">
                         <h5>Your Review</h5>
                     </div>
-                    <form action="#">
-                        <textarea placeholder="Your Comment"></textarea>
+                    <form action="/review/save" method="post" enctype="multipart/form-data">
+                        <textarea id="main-review" name="main-review" placeholder="Your Comment"></textarea>
                         <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
                     </form>
                 </div>
