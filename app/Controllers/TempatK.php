@@ -122,10 +122,10 @@ class TempatK extends BaseController
     public function delete($id)
     {
         // hapus gambar di public
-        $tempatk = $this->tempatk->find($id);
+        $tempatkulinerModel = $this->tempatkulinerModel->find($id);
         // kalau gambar default
-        if ($tempatk['gambar'] != 'default.jpg') {
-            unlink('img/tempat-kuliner/' . $tempatk['gambar']);
+        if ($tempatkulinerModel['gambar'] != 'default.jpg') {
+            unlink('img/tempat-kuliner/' . $tempatkulinerModel['gambar']);
         }
         // hapus data di database
         $this->tempatkulinerModel->delete($id);

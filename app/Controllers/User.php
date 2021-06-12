@@ -2,16 +2,16 @@
 
 namespace App\Controllers;
 
-use \App\Models\UserModel;
+use \App\Models\UsersModel;
 
 class User extends BaseController
 {
-    /* protected $userModel;
+    protected $usersModel;
 
     public function __construct()
     {
-        $this->userModel = new UserModel();
-    } */
+        $this->usersModel = new UsersModel();
+    }
 
     public function index()
     {
@@ -20,9 +20,9 @@ class User extends BaseController
             'username' => session()->get('username'),
             'email' => session()->get('email'),
         ];
-        return view('user/index', $data);
+        $data['users'] = $this->usersModel->getAllUsers();
 
-        $this->load->view('layout/navbar-user', $data);
+        return view('user/index', $data);
 
 
         /* // Pagination nomor

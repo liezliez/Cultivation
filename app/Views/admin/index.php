@@ -1,4 +1,4 @@
-<?= $this->extend('layout/template-admin'); ?>
+<?= $this->extend('admin/template-admin'); ?>
 
 <!DOCTYPE html>
 <html lang="english">

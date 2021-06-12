@@ -37,11 +37,11 @@ class Login extends BaseController
                 ]);
                 // Jika role Admin
                 if (session()->role_id == 1) {
-                    return redirect()->to(base_url('admin'));
+                    return redirect()->to(base_url('/'));
                 }
                 // Jika role user
                 else {
-                    return redirect()->to(base_url('user'));
+                    return redirect()->to(base_url('/'));
                 }
             } else {
                 session()->setFlashdata('error', 'Password Salah');

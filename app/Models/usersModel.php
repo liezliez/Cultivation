@@ -18,4 +18,12 @@ class usersModel extends Model
     {
         return $this->table('users')->like('username', $keyword);
     }
+
+    public function getAllUsers()
+    {
+        return $this->db->table('users')
+            ->orderBy('username', 'ASC')
+            ->get()
+            ->getResultArray();
+    }
 }

@@ -10,6 +10,6 @@ class admin extends BaseController
         $data = [
             'title' => 'Cultivation | Admin'
         ];
-        return view('admin/index', $data);
+        return view('/pages/home', $data);
     }
 }

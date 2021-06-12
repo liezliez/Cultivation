@@ -11,7 +11,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
@@ -19,6 +19,11 @@
 
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
+                            <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 1)) {
+                                echo
+                                '<li><a href="/user">User</a></li>';
+                            }
+                            ?>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./categories.html">Murah</a></li>
@@ -34,7 +39,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="header__right">
                     <?php
                     $username = session()->get('username');
@@ -44,8 +49,6 @@
                     } else {
                         echo '<a href="/login" class="login-switch ml-4 mr-0">Login | Sign-up <span class="icon_profile"></a>';
                     } ?>
-
-
                 </div>
             </div>
             <!-- <div class="col-lg-3">
