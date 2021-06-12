@@ -56,4 +56,14 @@ class User extends BaseController
         session()->setFlashdata('edit', 'data berhasil diubah');
         return redirect()->to(base_url('user'));
     }
+
+    public function deleteUser($id_user)
+    {
+        $data = [
+            'id' => $id_user,
+        ];
+        $this->usersModel->deleteUser($data);
+        session()->setFlashdata('delete', 'data berhasil didelete');
+        return redirect()->to(base_url('user'));
+    }
 }
