@@ -16,14 +16,12 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <!-- QUERY NAVBAR -->
-
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
                             <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 1)) {
                                 echo
                                 '<li><a href="/user">User</a></li>';
-                            }
-                            ?>
+                            } ?>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./categories.html">Murah</a></li>
@@ -73,7 +71,7 @@
         });
     </script>
 
-    <!-- Silahkan Login Message -->
+    <!-- Script Silahkan Login Message -->
     <?php
     $message = session()->getFlashdata('larangan');
     function IsNullOrEmptyString($str)

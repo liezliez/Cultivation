@@ -22,6 +22,8 @@
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="section-title">
                     <h4 style="margin-top: 32px;">Daftar Tempat Kuliner</h4>
+
+                    <!-- Button Tambah Tempat Kuliner -->
                     <?php if (session()->getFlashdata('pesan')) : ?>
                         <div class="alert alert-success mt-4" role="alert">
                             <?= session()->getFlashdata('pesan'); ?>

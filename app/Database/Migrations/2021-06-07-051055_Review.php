@@ -20,10 +20,9 @@ class Review extends Migration
 				'constraint'     => 11,
 				'unsigned'       => true,
 			],
-			'tempat_kuliner_id'	=> [
-				'type'           => 'INT',
-				'constraint'     => 11,
-				'unsigned'       => true,
+			'tempat_kuliner_slug'	=> [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255',
 			],
 			'review' 	=> [
 				'type' 			=> 'VARCHAR',

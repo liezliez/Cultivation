@@ -68,6 +68,20 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Deskripsi -->
+                        <div class="form-group row">
+                            <label for="deskripsi" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>deskripsi : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?>" id="deskripsi" name="deskripsi" value=""> <?= (old('deskripsi')) ? old('deskripsi') : $tempatk['deskripsi'] ?></textarea>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('deskripsi'); ?>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Gambar -->
                         <div class="form-group row">
                             <label for="gambar" class="col-sm-3 col-form-label">

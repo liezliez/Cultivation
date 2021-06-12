@@ -3,9 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\ReviewModel;
+use PhpParser\Node\Stmt\Echo_;
 
 class Review extends BaseController
 {
+
+    public function __construct()
+    {
+        $this->reviewModel = new ReviewModel();
+        helper('form');
+    }
 
     public function index()
     {
@@ -22,19 +29,19 @@ class Review extends BaseController
             'main-review' => [
                 'rules' => 'required|min_length[2]|max_length[100]',
                 'errors' => [
-                    'required' => '{field} Harus diisi',
+                    'required' => 'Review anda tidak boleh kosong',
                     'min_length' => '{field} Minimal 2 Karakter',
                     'max_length' => '{field} Maksimal 100 Karakter'
                 ]
             ]
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
+            // echo '<script type="text/javascript">toastr.success("Have Fun")</script>';
             return redirect()->back()->withInput();
         }
 
-        $review = new ReviewModel();
         $user_id = session()->get('id');
-        $review->insert([
+        $this->reviewModel->insert([
             'review' => $this->request->getVar('main-review'),
             'user_id' => $user_id,
         ]);

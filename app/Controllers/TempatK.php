@@ -183,9 +183,15 @@ class TempatK extends BaseController
                     'is_image' => 'File harus gambar',
                     'mime_in' => 'File harus gambar'
                 ]
-            ]
+            ],
+            'deskripsi' => [
+                'rules' => 'required[tempatkuliner.deskripsi]|max_length[800]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
         ])) {
-            return redirect()->to('/tempat-kuliner/tambah')->withInput();
+            return redirect()->back()->withInput();
         }
 
         // cek gambar , gambar lama atau baru
@@ -210,6 +216,7 @@ class TempatK extends BaseController
             'slug' => $slug,
             'pemilik' => $this->request->getVar('pemilik'),
             'alamat' => $this->request->getVar('alamat'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
             'gambar' => $namaGambar
         ]);
         session()->setFlashdata('pesan', 'Data berhasil diubah');

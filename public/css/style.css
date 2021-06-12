@@ -1395,7 +1395,7 @@ i:hover {
 .anime__details__form form textarea {
   width: 100%;
   font-size: 15px;
-  color: #b7b7b7;
+  color: #0d0d0d;
   padding-left: 20px;
   padding-top: 12px;
   height: 110px;
@@ -2651,9 +2651,7 @@ h1
 }
 */
 
-
-.main
-{
+.main {
   width: 100%;
   min-height: 550px;
   text-align: center;
@@ -2661,9 +2659,7 @@ h1
   cursor: pointer;
 }
 
-
-.service
-{
+.service {
   background: white;
   padding: 30px;
   border-radius: 10px;
@@ -2671,12 +2667,11 @@ h1
   bottom: 0;
   box-shadow: 0 0 20px -15px black;
   z-index: 1;
-  transition: transform .7s;
+  transition: transform 0.7s;
   font-family: "Oswald", sans-serif;
 }
 
-.service-logo 
-{
+.service-logo {
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -2686,16 +2681,14 @@ h1
   background: white;
 }
 
-.service-logo img
-{
+.service-logo img {
   width: 100%;
-  filter:grayscale(100%);
+  filter: grayscale(100%);
   transition: 0.4s all;
   border-radius: 50%;
 }
 
-.service h4
-{
+.service h4 {
   height: 35px;
   width: 80%;
   background: white;
@@ -2704,9 +2697,8 @@ h1
   font-family: "Oswald", sans-serif;
 }
 
-.service h4::after
-{
-  content: '';
+.service h4::after {
+  content: "";
   width: 40px;
   height: 30px;
   background: linear-gradient(to right, white, #5205f0);
@@ -2716,9 +2708,8 @@ h1
   z-index: -1;
 }
 
-.service h4::before
-{
-  content: '';
+.service h4::before {
+  content: "";
   width: 40px;
   height: 30px;
   background: linear-gradient(to right, #5205f0, white);
@@ -2728,8 +2719,7 @@ h1
   z-index: -1;
 }
 
-.shadow1
-{
+.shadow1 {
   height: 200px;
   width: 80%;
   background: white;
@@ -2739,11 +2729,10 @@ h1
   left: 10%;
   z-index: -1;
   box-shadow: 0 0 20px -15px black;
-  transition: transform .7s;
+  transition: transform 0.7s;
 }
 
-.shadow2
-{
+.shadow2 {
   height: 200px;
   width: 64%;
   background: white;
@@ -2754,17 +2743,13 @@ h1
   z-index: -2;
 }
 
-.main:hover .service
-{
+.main:hover .service {
   transform: translateY(-50px);
 }
 
-.main:hover .shadow1
-{
+.main:hover .shadow1 {
   transform: translateY(-25px);
 }
-
-
 
 /* css about_us_v2 */
 /*

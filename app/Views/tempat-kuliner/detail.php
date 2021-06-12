@@ -149,6 +149,12 @@
                     <div class="section-title">
                         <h5>Your Review</h5>
                     </div>
+                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            </hr />
+                            <?php echo session()->getFlashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
                     <form action="/review/save" method="post" enctype="multipart/form-data">
                         <textarea id="main-review" name="main-review" placeholder="Your Comment"></textarea>
                         <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
@@ -184,6 +190,10 @@
             </div>
         </div>
     </div>
+
 </section>
+
+
+
 <!-- Anime Section End -->
 <?= $this->endSection('content'); ?>

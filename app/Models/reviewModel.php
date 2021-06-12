@@ -15,8 +15,27 @@ class reviewModel extends Model
 
 
     /* Fungsi Lain-Lain */
+
+    // Fungsi Search
     public function search($user_id)
     {
         return $this->table('review')->like('user_id', $user_id);
+    }
+
+    // Fungsi Get Semua User
+    public function getAllUsers()
+    {
+        return $this->db->table('users')
+            ->orderBy('username', 'ASC')
+            ->get()
+            ->getResultArray();
+    }
+
+    //Fungsi Edit User berdasarkan id, berbentuk object
+    public function editUser($data)
+    {
+        $this->db->table('users')
+            ->where('id', $data['id'])
+            ->update($data);
     }
 }

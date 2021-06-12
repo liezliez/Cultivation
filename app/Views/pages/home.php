@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <html lang="english">
 
-
-
 <?= $this->section('content'); ?>
 <!-- Hero Section Begin -->
 
