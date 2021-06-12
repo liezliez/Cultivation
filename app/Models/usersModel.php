@@ -33,11 +33,4 @@ class usersModel extends Model
             ->where('id', $data['id'])
             ->update($data);
     }
-
-    public function deleteUser($data)
-    {
-        $this->db->table('users')
-            ->where('id', $data['id'])
-            ->delete($data);
-    }
 }
