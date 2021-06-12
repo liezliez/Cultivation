@@ -100,6 +100,7 @@ class Register extends BaseController
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
             'email' => $this->request->getVar('email'),
             'gambar' => $namaGambar,
+            'active' => 1,
         ]);
         // Flash data message registrasi berhasil
         session()->setFlashdata('message', 'Registrasi Berhasil');

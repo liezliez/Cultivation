@@ -9,7 +9,7 @@ class usersModel extends Model
     /* Deklarasi Tabel Users */
     protected $table      = 'users';
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'email', 'password', 'gambar', 'role_id'];
+    protected $allowedFields = ['username', 'email', 'password', 'gambar', 'role_id', 'active'];
     protected $primaryKey = "id";
     protected $returnType = "object";
 
@@ -25,5 +25,12 @@ class usersModel extends Model
             ->orderBy('username', 'ASC')
             ->get()
             ->getResultArray();
+    }
+
+    public function editUser($data)
+    {
+        $this->db->table('users')
+            ->where('id', $data['id'])
+            ->update($data);
     }
 }

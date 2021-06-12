@@ -44,4 +44,16 @@ class User extends BaseController
 
         return view('user/index', $data); */
     }
+
+    public function editUser($id_user)
+    {
+        $data = [
+            'id' => $id_user,
+            'username' => $this->request->getPost(),
+            'email' => $this->request->getPost(),
+        ];
+        $this->usersModel->editUser($data);
+        session()->setFlashdata('edit', 'data berhasil diubah');
+        return redirect()->to(base_url('user'));
+    }
 }

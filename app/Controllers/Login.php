@@ -26,7 +26,7 @@ class Login extends BaseController
         ])->first();
 
         if ($dataUser) {
-            if (password_verify($password, $dataUser->password)) {
+            if ((password_verify($password, $dataUser->password)) && (($dataUser->active) == 1)) {
                 session()->set([
                     'id' => $dataUser->id,
                     'username' => $dataUser->username,
@@ -44,7 +44,7 @@ class Login extends BaseController
                     return redirect()->to(base_url('/'));
                 }
             } else {
-                session()->setFlashdata('error', 'Password Salah');
+                session()->setFlashdata('error', 'Password Salah / Akun anda dinonaktifkan');
                 return redirect()->back();
             }
         } else {
