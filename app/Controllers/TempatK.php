@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \App\Models\TempatkulinerModel;
+use \App\Models\ReviewModel;
 
 class TempatK extends BaseController
 {
@@ -11,6 +12,7 @@ class TempatK extends BaseController
     public function __construct()
     {
         $this->tempatkulinerModel = new TempatkulinerModel();
+        $this->reviewModel = new ReviewModel();
     }
 
     public function index()
@@ -18,7 +20,8 @@ class TempatK extends BaseController
 
         $data = [
             'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatk()
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+            'reviews' => $this->reviewModel->getAllReview()
         ];
 
         return view('tempat-kuliner/index', $data);
@@ -29,7 +32,8 @@ class TempatK extends BaseController
 
         $data = [
             'title' => 'Detail Tempat Kuliner',
-            'tempatk' => $this->tempatkulinerModel->getTempatk($slug)
+            'tempatk' => $this->tempatkulinerModel->getTempatk($slug),
+            'reviews' => $this->reviewModel->getAllReview()
         ];
 
         /* Jika gak ada */

@@ -23,10 +23,10 @@ class reviewModel extends Model
     }
 
     // Fungsi Get Semua User
-    public function getAllUsers()
+    public function getAllReview()
     {
-        return $this->db->table('users')
-            ->orderBy('username', 'ASC')
+        return $this->db->table('review')
+            ->orderBy('id', 'ASC')
             ->get()
             ->getResultArray();
     }

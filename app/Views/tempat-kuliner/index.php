@@ -40,6 +40,8 @@
                 </div>
             </div>
 
+            <!-- List Daftar Tempat Kuliner -->
+
             <div class="trending__product">
                 <div class="row">
                     <?php $i = 1; ?>

@@ -51,9 +51,12 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <ul>
-                                        <li><span>Tipe Tempat Kuliner:</span> Warung Nasi</li>
+                                        <li><span>Jenis:</span> Warung Nasi</li>
                                         <li><span>Pemilik:</span> Bpk.Rohman</li>
-                                        <li><span>Jam Buka:</span> 07:00 - 21:00</li>
+                                        <li><span>Jam Buka:</span>
+                                            <?php echo date('G:i', strtotime($tempatk['jam_buka'])); ?> -
+                                            <?php echo date('G:i', strtotime($tempatk['jam_tutup'])); ?>
+                                        </li>
                                         <li><span>Status:</span> Buka</li>
                                         <li><span>Kategori :</span> Murah, Enak, Banyak, Bersih</li>
                                     </ul>
@@ -84,64 +87,29 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-8">
+
+                <!-- Reviews Users -->
                 <div class="anime__details__review">
                     <div class="section-title">
                         <h5>Reviews</h5>
                     </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-1.jpg" alt="">
+
+                    <?php $i = 1; ?>
+                    <?php foreach ($reviews as $review) : ?>
+                        <!-- Satu Review -->
+                        <div class="anime__review__item">
+                            <div class="anime__review__item__pic">
+                                <img src="<?php echo base_url('img/user/default.png') ?>" alt="">
+                            </div>
+                            <div class="anime__review__item__text">
+                                <h6><?php echo ($review['id']); ?> - <span>1 Hour ago</span></h6>
+                                <p><?php echo ($review['review']); ?></p>
+                            </div>
                         </div>
-                        <div class="anime__review__item__text">
-                            <h6>Weismangan - <span>1 Hour ago</span></h6>
-                            <p>Warteg gue banget nih</p>
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-2.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Wibu - <span>5 Hour ago</span></h6>
-                            <p>Murah, enak si bapaknya juga ramah banget</p>
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-3.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>RPLDI - <span>20 Hour ago</span></h6>
-                            <p>Kalau udah malem biasanya kerangnya asem</p>
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-4.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                            <p>Baru kemarin makan disini, worth it</p>
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-5.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                            <p>Murah murah murah murah murah murah</p>
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-6.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                            <p>enak enak enak enak enak enak</p>
-                        </div>
-                    </div>
+                        <!-- Review -->
+                    <?php endforeach; ?>
+
+
                 </div>
                 <div class="anime__details__form">
                     <!-- Comment Section -->

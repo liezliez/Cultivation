@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\ReviewModel;
-use PhpParser\Node\Stmt\Echo_;
 
 class Review extends BaseController
 {
@@ -18,7 +17,8 @@ class Review extends BaseController
     {
         $data = [
             'title' => 'Cultivation | Review',
-            'validation' => \Config\Services::Validation()
+            'validation' => \Config\Services::Validation(),
+            'reviews' => $this->reviewModel->getAllReview()
         ];
         return $data;
     }
