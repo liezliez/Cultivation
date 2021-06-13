@@ -50,15 +50,13 @@
                             <div class="product__item">
                                 <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
                                     <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
-                                        <div class="ep">5k - 20k</div>
+                                        <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
+                                        <div class="view"><i class="fa fa-star"></i> <?php echo $tempatk['rating']; ?>/5</div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
-                                            <li>Kenyang</li>
-                                            <li>Nyaman</li>
-                                            <li>Murah</li>
+                                            <li><?php echo $tempatk['kategori'] ?></li>
                                         </ul>
                                         <h5><a href="#"><?= $tempatk['nama']; ?></a></h5>
                                     </div>

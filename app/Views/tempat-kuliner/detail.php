@@ -43,33 +43,48 @@ use CodeIgniter\I18n\Time; ?>
                         </div>
                         <div class="anime__details__rating">
                             <div class="rating">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                                <?php $rate = $tempatk['rating']; ?>
+                                <?php for ($x = 0; $x < $rate; $x++) { ?>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                <?php } ?>
                             </div>
-                            <span>20.699 Votes</span>
+                            <span>Rating dari kami : <?php
+                                                        switch ($rate) {
+                                                            case 1:
+                                                                echo "Buruk";
+                                                                break;
+                                                            case 2:
+                                                                echo "Lumayan";
+                                                                break;
+                                                            case 3:
+                                                                echo "Baik";
+                                                                break;
+                                                            case 4:
+                                                                echo "Sangat Baik";
+                                                                break;
+                                                            default:
+                                                                echo "Auto Langganan";
+                                                        }
+                                                        ?></span>
                         </div>
                         <p><?= $tempatk['deskripsi']; ?></p>
                         <div class="anime__details__widget">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <ul>
-                                        <li><span>Jenis:</span> Warung Nasi</li>
-                                        <li><span>Pemilik:</span> Bpk.Rohman</li>
+                                        <li><span>Pemilik:</span> <?php echo $tempatk['pemilik'] ?></li>
                                         <li><span>Jam Buka:</span>
                                             <?php echo date('G:i', strtotime($tempatk['jam_buka'])); ?> -
                                             <?php echo date('G:i', strtotime($tempatk['jam_tutup'])); ?>
                                         </li>
-                                        <li><span>Status:</span> Buka</li>
-                                        <li><span>Kategori :</span> Murah, Enak, Banyak, Bersih</li>
+                                        <li><span>Harga:</span> Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></li>
+                                        <li><span>Rating:</span><i class="fa fa-star"></i> <?php echo $rate ?>/5</li>
+                                        <!-- <li><span>Kategori :</span> Murah, Enak, Banyak, Bersih</li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <ul>
-                                        <li><span>Rating:</span> 4.5 / 20.699 times</li>
-                                        <li><span>Views:</span> 13.454</li>
+                                        <!-- <li><span>Views:</span> 13.454</li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -98,24 +113,21 @@ use CodeIgniter\I18n\Time; ?>
                     <div class="section-title">
                         <h5>Reviews</h5>
                     </div>
-
-                    <?php $i = 1; ?>
+                    <?php $autoload['helpers'] = array('date', 'myhelper'); ?>
+                    <?php $i = 0; ?>
                     <?php foreach ($reviews as $review => $value) : ?>
-                        <!-- Satu Review -->
+                        <!-- For one Review by -->
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
-                                <img src="<?php echo base_url('img/user/default.png') ?>" alt="">
+                                <img src="<?php echo base_url('img/user/' . $value['gambar']) ?>" alt="">
                             </div>
                             <div class="anime__review__item__text">
-                                <?php $autoload['helpers'] = array('date', 'myhelper'); ?>
+
                                 <h6><?php echo $value['username'] ?> -
                                     <span>
                                         <?php
-                                        echo $value['slug'];
+                                        // echo $value['slug'];
                                         echo $review;
-                                        // $now = time();
-                                        // $time = Time::parse($value['created_at']);
-                                        // echo $time->humanize();  
                                         ?>
                                     </span>
                                 </h6>

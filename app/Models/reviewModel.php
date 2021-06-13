@@ -27,7 +27,7 @@ class reviewModel extends Model
     {
         return $this->db->table('review')
             ->join('users', 'users.id=review.user_id')
-            ->join('tempatkuliner', 'tempatkuliner.slug=review.tempat_kuliner_slug')
+            // ->join('tempatkuliner', 'tempatkuliner.slug=review.tempat_kuliner_slug')
             // ->orderBy('id', 'ASC')
             ->get()
             ->getResultArray();

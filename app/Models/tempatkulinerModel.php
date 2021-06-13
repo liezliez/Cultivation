@@ -8,7 +8,14 @@ class tempatkulinerModel extends Model
 {
     protected $table      = 'tempatkuliner';
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama', 'pemilik', 'alamat', 'deskripsi', 'gambar', 'slug'];
+    protected $allowedFields = [
+        'nama',         'slug',
+        'pemilik',      'alamat',
+        'gambar',       'deskripsi',
+        'kategori',     'rating',
+        'harga_min',    'harga_max',
+        'jam_buka',     'jam_tutup',
+    ];
 
     public function getTempatk($slug = false)
     {

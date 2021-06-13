@@ -82,6 +82,35 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Kategori -->
+                        <div class="form-group row">
+                            <label for="deskripsi" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Kategori : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="custom-select" id="kategori">
+                                    <option selected>Pilih Kategori</option>
+                                    <option value="murah">Murah</option>
+                                    <option value="enak">Enak</option>
+                                    <option value="sultan">Sultan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Rating -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rating" id="rating1" value="option1" checked>
+                            <label class="form-check-label" for="rating1">
+                                Default radio
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rating" id="rating2" value="option2">
+                            <label class="form-check-label" for="rating2">
+                                Default radio
+                            </label>
+                        </div>
                         <!-- Gambar -->
                         <div class="form-group row">
                             <label for="gambar" class="col-sm-3 col-form-label">

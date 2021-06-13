@@ -58,38 +58,82 @@ class TempatK extends BaseController
 
     public function save()
     {
-        // validasi
-        if (!$this->validate([
-            'nama' => [
-                'rules' => 'required|is_unique[tempatkuliner.nama]',
-                'errors' => [
-                    'required' => '{field} harus diisi',
-                    'is_unique' => '{field} tempat kuliner telah terdaftar'
-                ]
-            ],
-            'pemilik' => [
-                'rules' => 'required[tempatkuliner.pemilik]',
-                'errors' => [
-                    'required' => '{field} harus diisi'
-                ]
-            ],
-            'alamat' => [
-                'rules' => 'required[tempatkuliner.alamat]',
-                'errors' => [
-                    'required' => '{field} harus diisi'
-                ]
-            ],
-            'gambar' => [
-                'rules' => 'max_size[gambar,5024]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
-                'errors' => [
-                    'uploaded' => '{field} harus ada',
-                    'max_size' => '{field} maksimal 5MB',
-                    'is_image' => 'File harus gambar',
-                    'mime_in' => 'File harus gambar'
 
-                ]
+        // validasi
+        if (!$this->validate(
+            [
+                'nama' => [
+                    'rules' => 'required|is_unique[tempatkuliner.nama]',
+                    'errors' => [
+                        'required' => '{field} harus diisi',
+                        'is_unique' => '{field} tempat kuliner telah terdaftar'
+                    ]
+                ],
+                'pemilik' => [
+                    'rules' => 'required[tempatkuliner.pemilik]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'alamat' => [
+                    'rules' => 'required[tempatkuliner.alamat]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'gambar' => [
+                    'rules' => 'max_size[gambar,5024]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
+                    'errors' => [
+                        'uploaded' => '{field} harus ada',
+                        'max_size' => '{field} maksimal 5MB',
+                        'is_image' => 'File harus gambar',
+                        'mime_in' => 'File harus gambar'
+                    ]
+                ],
+                'deskripsi' => [
+                    'rules' => 'required[tempatkuliner.deskripsi]|max_length[800]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'kategori' => [
+                    'rules' => 'required[tempatkuliner.kategori]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'rating' => [
+                    'rules' => 'required[tempatkuliner.rating]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'harga_min' => [
+                    'rules' => 'required[tempatkuliner.harga_min]|greater_than[0]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'harga_max' => [
+                    'rules' => 'required[tempatkuliner.harga_max]|greater_than[0]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'jam_buka' => [
+                    'rules' => 'required[tempatkuliner.jam_buka]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
+                'jam_tutup' => [
+                    'rules' => 'required[tempatkuliner.jam_tutup]',
+                    'errors' => [
+                        'required' => '{field} harus diisi'
+                    ]
+                ],
             ]
-        ])) {
+        )) {
             // $validation = \Config\Services::validation();
             // return redirect()->to('/tempat-kuliner/tambah')->withInput()->with('validation', $validation);
             return redirect()->to('/tempat-kuliner/tambah')->withInput();
@@ -117,7 +161,13 @@ class TempatK extends BaseController
             'slug' => $slug,
             'pemilik' => $this->request->getVar('pemilik'),
             'alamat' => $this->request->getVar('alamat'),
-            'gambar' => $namaGambar
+            'deskripsi' => $this->request->getVar('deskripsi'),
+            'kategori' => $this->request->getVar('kategori'),
+            'rating' => $this->request->getVar('rating'),
+            'harga_min' => $this->request->getVar('harga_min'),
+            'harga_max' => $this->request->getVar('harga_max'),
+            'jam_buka' => $this->request->getVar('jam_buka'),
+            'jam_tutup' => $this->request->getVar('jam_tutup'),
         ]);
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
         return redirect()->to('/tempat-kuliner');
@@ -194,6 +244,42 @@ class TempatK extends BaseController
                     'required' => '{field} harus diisi'
                 ]
             ],
+            'kategori' => [
+                'rules' => 'required[tempatkuliner.kategori]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'rating' => [
+                'rules' => 'required[tempatkuliner.rating]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'harga_min' => [
+                'rules' => 'required[tempatkuliner.harga_min]|greater_than[0]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'harga_max' => [
+                'rules' => 'required[tempatkuliner.harga_max]|greater_than[0]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'jam_buka' => [
+                'rules' => 'required[jam_buka.deskripsi]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'jam_tutup' => [
+                'rules' => 'required[jam_tutup.deskripsi]',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
         ])) {
             return redirect()->back()->withInput();
         }
@@ -221,7 +307,14 @@ class TempatK extends BaseController
             'pemilik' => $this->request->getVar('pemilik'),
             'alamat' => $this->request->getVar('alamat'),
             'deskripsi' => $this->request->getVar('deskripsi'),
-            'gambar' => $namaGambar
+            'kategori' => $this->request->getVar('kategori'),
+            'rating' => $this->request->getVar('rating'),
+            'harga_min' => $this->request->getVar('harga_min'),
+            'harga_max' => $this->request->getVar('harga_max'),
+            'jam_buka' => $this->request->getVar('jam_buka'),
+            'jam_tutup' => $this->request->getVar('jam_tutup'),
+            'gambar' => $namaGambar,
+
         ]);
         session()->setFlashdata('pesan', 'Data berhasil diubah');
         return redirect()->to('/tempat-kuliner');

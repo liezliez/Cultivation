@@ -75,10 +75,123 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <textarea class="form-control <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?>" id="deskripsi" name="deskripsi" value="<?= (old('deskripsi')) ?>"></textarea>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?> value="<?php (old('deskripsi')) ?>"></textarea>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('deskripsi'); ?>
                                 </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group row">
+                            <label for="deskripsi" class="col-sm-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>deskripsi : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?>" id="deskripsi" name="deskripsi" value="<?= old('deskripsi'); ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('deskripsi'); ?>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <!-- Kategori -->
+                        <div class="form-group row">
+                            <label for="kategori" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Kategori : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <select name="kategori" class="form-control custom-select" id="kategori">
+                                    <option value="">Pilih Kategori</option>
+                                    <option value="murah">Murah</option>
+                                    <option value="enak">Enak</option>
+                                    <option value="bersih">Bersih</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('kategori'); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="form-group row">
+                            <label for="rating" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Rating : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <select name="rating" class="form-control custom-select" id="rating">
+                                    <option>Pilih Rating</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('rating'); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jam Buka -->
+                        <div class="form-group row">
+                            <label for="jam_buka" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Jam Buka : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="time" id="jam_buka" name="jam_buka">
+                            </div>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('jam_buka'); ?>
+                            </div>
+                        </div>
+                        <!-- Jam Tutup -->
+                        <div class="form-group row">
+                            <label for="jam_tutup" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Jam Tutup : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="time" id="jam_tutup" name="jam_tutup">
+                            </div>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('jam_tutup'); ?>
+                            </div>
+                        </div>
+                        <!-- Harga min -->
+                        <div class="form-group row">
+                            <label for="jam_tutup" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Harga Min : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="number" id="harga_min" name="harga_min" step="1000" min="500">
+                            </div>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('harga_min'); ?>
+                            </div>
+                        </div>
+                        <!-- Harga max -->
+                        <div class="form-group row">
+                            <label for="jam_tutup" class="col-md-3 col-form-label">
+                                <div class="create-title">
+                                    <h4>Harga Max : </h4>
+                                </div>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="number" id="harga_max" name="harga_max" step="1000" min="500">
+                            </div>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('harga_max'); ?>
                             </div>
                         </div>
 
