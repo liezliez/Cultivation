@@ -53,7 +53,9 @@ class User extends BaseController
             'email' => $this->request->getPost('email'),
             'role_id' => $this->request->getPost('role_id'),
             'active' => $this->request->getPost('active'),
+
         ];
+
         $this->usersModel->editUser($data);
         session()->setFlashdata('edit', 'data berhasil diubah');
         return redirect()->to(base_url('user'));

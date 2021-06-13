@@ -1,8 +1,13 @@
 <?= $this->extend('layout/template'); ?>
 <!DOCTYPE html>
 <html lang="english">
+<?php
+
+use CodeIgniter\I18n\Time; ?>
 
 <?= $this->section('content'); ?>
+
+
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">
     <div class="container">
@@ -95,15 +100,24 @@
                     </div>
 
                     <?php $i = 1; ?>
-                    <?php foreach ($reviews as $review) : ?>
+                    <?php foreach ($reviews as $review => $value) : ?>
                         <!-- Satu Review -->
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
                                 <img src="<?php echo base_url('img/user/default.png') ?>" alt="">
                             </div>
                             <div class="anime__review__item__text">
-                                <h6><?php echo ($review['id']); ?> - <span>1 Hour ago</span></h6>
-                                <p><?php echo ($review['review']); ?></p>
+                                <?php $autoload['helpers'] = array('date', 'myhelper'); ?>
+                                <h6><?php echo $value['username'] ?> -
+                                    <span>
+                                        <?php
+                                        // $now = time();
+                                        // $time = Time::parse($value['created_at']);
+                                        // echo $time->humanize();  
+                                        ?>
+                                    </span>
+                                </h6>
+                                <p><?php echo $value['review']; ?></p>
                             </div>
                         </div>
                         <!-- Review -->
@@ -123,7 +137,7 @@
                             <?php echo session()->getFlashdata('error'); ?>
                         </div>
                     <?php endif; ?>
-                    <form action="/review/save" method="post" enctype="multipart/form-data">
+                    <form action="/review/save/<?= $tempatk['slug']; ?>" method="post" enctype="multipart/form-data">
                         <textarea id="main-review" name="main-review" placeholder="Your Comment"></textarea>
                         <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
                     </form>

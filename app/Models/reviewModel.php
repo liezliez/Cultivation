@@ -22,14 +22,17 @@ class reviewModel extends Model
         return $this->table('review')->like('user_id', $user_id);
     }
 
-    // Fungsi Get Semua User
+    // Fungsi Get Semua Review Berdasarkan
     public function getAllReview()
     {
         return $this->db->table('review')
-            ->orderBy('id', 'ASC')
+            ->join('users', 'users.id=review.user_id')
+            ->join('tempatkuliner', 'tempatkuliner.slug=review.tempat_kuliner_slug')
+            // ->orderBy('id', 'ASC')
             ->get()
             ->getResultArray();
     }
+
 
     //Fungsi Edit User berdasarkan id, berbentuk object
     public function editUser($data)
