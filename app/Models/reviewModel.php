@@ -33,6 +33,17 @@ class reviewModel extends Model
             ->getResultArray();
     }
 
+    public function getAllReviewBySlug($slug)
+    {
+        return $this->db->table('review')
+            ->join('users', 'users.id=review.user_id')
+            ->where('tempat_kuliner_slug', $slug)
+            // ->orderBy('id', 'ASC')
+            ->get()
+            ->getResultArray();
+    }
+
+
 
     //Fungsi Edit User berdasarkan id, berbentuk object
     public function editUser($data)

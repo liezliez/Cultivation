@@ -111,6 +111,8 @@ use CodeIgniter\I18n\Time; ?>
                                 <h6><?php echo $value['username'] ?> -
                                     <span>
                                         <?php
+                                        echo $value['slug'];
+                                        echo $review;
                                         // $now = time();
                                         // $time = Time::parse($value['created_at']);
                                         // echo $time->humanize();  

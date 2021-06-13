@@ -15,7 +15,7 @@ class Review extends BaseController
         helper('form');
     }
 
-    public function index($slug)
+    public function index()
     {
         $data = [
             'title' => 'Cultivation | Review',
@@ -52,5 +52,10 @@ class Review extends BaseController
         // Flash data message registrasi berhasil
         session()->setFlashdata('message', 'Review Berhasil');
         return redirect()->back();
+    }
+
+    public function getReview($slug)
+    {
+        return getAllReviewBySlug($slug);
     }
 }
