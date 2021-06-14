@@ -107,7 +107,6 @@ use CodeIgniter\I18n\Time; ?>
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-8">
-
                 <!-- Reviews Users -->
                 <div class="anime__details__review">
                     <div class="section-title">
