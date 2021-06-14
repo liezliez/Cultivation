@@ -22,7 +22,7 @@
                                 echo
                                 '<li><a href="/user">User</a></li>';
                             } ?>
-                            <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
+                            <li><a href="./categories.html">Daya Tarik<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="/TempatK/murah">Murah</a></li>
                                     <li><a href="/TempatK/bersih">Bersih</a></li>
@@ -41,7 +41,7 @@
                 echo '
                         <div class="col-lg-2">
                             <div class="header__right">
-                                <a href="/profile" class="ml-1">' . $username . ' | </a> <br>
+                                <a style="display: inline-block;" "href="/profile" class="ml-1">' . $username . ' | </a> <br>
                                 <a href="/logout" class="logout">Logout <span class="fa fa-sign-out"></span></a>
                             </div>
                         </div>';

@@ -19,6 +19,14 @@ class Pages extends BaseController
 		];
 		return view('/pages/home', $data);
 	}
+	public function index_v2()
+	{
+		$data = [
+			'title' => 'Cultivation | Cari Tempat Kulinermu Disini',
+			'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+		];
+		return view('/tempat-kuliner/index_v2', $data);
+	}
 	public function details()
 	{
 		$data = [
@@ -46,5 +54,12 @@ class Pages extends BaseController
 			'title' => 'Cultivation | Tentang Kami'
 		];
 		return view('/pages/tentangkami', $data);
+	}
+	public function easterEgg()
+	{
+		$data = [
+			'title' => 'Cultivation | Tentang Kami'
+		];
+		return view('/pages/easterEgg', $data);
 	}
 }

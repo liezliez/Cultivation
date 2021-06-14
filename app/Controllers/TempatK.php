@@ -21,7 +21,6 @@ class TempatK extends BaseController
         $data = [
             'title' => 'Daftar Tempat Kuliner',
             'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-            'reviews' => $this->reviewModel->getAllReview(),
         ];
 
         return view('tempat-kuliner/index', $data);
@@ -32,7 +31,6 @@ class TempatK extends BaseController
         $data = [
             'title' => 'Daftar Tempat Kuliner',
             'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-            'reviews' => $this->reviewModel->getAllReview(),
         ];
 
         return view('tempat-kuliner/index_murah', $data);
@@ -44,7 +42,6 @@ class TempatK extends BaseController
         $data = [
             'title' => 'Daftar Tempat Kuliner',
             'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-            'reviews' => $this->reviewModel->getAllReview(),
         ];
 
         return view('tempat-kuliner/index_bersih', $data);
@@ -56,10 +53,18 @@ class TempatK extends BaseController
         $data = [
             'title' => 'Daftar Tempat Kuliner',
             'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-            'reviews' => $this->reviewModel->getAllReview(),
         ];
 
         return view('tempat-kuliner/index_enak', $data);
+    }
+
+    public function easterEgg()
+    {
+        $data = [
+            'title' => 'Cultivation | Tentang Kami',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+        ];
+        return view('/pages/easterEgg', $data);
     }
 
     public function ratingTertinggi()

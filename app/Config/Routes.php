@@ -67,6 +67,8 @@ $routes->get('/tempat-kuliner/(:any)', 'TempatK::detail/$1');
 
 // $routes->get('/tempat-kuliner/kategori/(:any)', 'TempatK::kategori/$1');
 
+$routes->get('/easterEgg', 'pages::easterEgg');
+
 
 /*
  * --------------------------------------------------------------------

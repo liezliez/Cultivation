@@ -650,7 +650,7 @@ ol {
 }
 
 .hero__items {
-  padding: 250px 0 42px 50px;
+  padding: 250px 0 20px 50px;
   border-radius: 5px;
 }
 
@@ -661,6 +661,7 @@ ol {
 
 .hero__text .label {
   margin: 6px;
+  border-radius: 5px;
   font-size: 18px;
   color: #e53637;
   background: #ffffff;
@@ -707,12 +708,15 @@ ol {
   position: relative;
   top: -100px;
   opacity: 0;
-  -webkit-transition: all, 2.5s;
-  -o-transition: all, 2.5s;
-  transition: all, 2.5s;
+  -webkit-transition: all, 2s;
+  -o-transition: all, 2s;
+  transition: all, 2s;
 }
 
 .hero__text a span {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
   font-size: 13px;
   color: #ffffff;
   background: #e53637;

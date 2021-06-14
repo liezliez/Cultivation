@@ -44,7 +44,6 @@
 
             <div class="trending__product">
                 <div class="row">
-                    <?php $i = 1; ?>
                     <?php foreach ($tempatkuliner as $tempatk) : ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
@@ -69,6 +68,189 @@
             </div>
         </div>
     </div>
+</div>
+
+<section class="blog spad">
+    <div class="container">
+        <div class="row">
+            <?php $i = 0;
+            $kolom = 0 ?>
+            <?php foreach ($tempatkuliner as $tempatk) : ?>
+                <?php $rate = $tempatk['rating']; ?>
+                <?php if (($i % 6 == 0) or ($i == 0)) { ?>
+                    <div class="col-lg-6">
+                        <div class="row">
+                        <?php } ?>
+                        <?php if ($kolom == 0) { ?>
+                            <?php if (($i % 3 == 0) or ($i == 0)) { ?>
+                                <!-- <h1> <?= $i; ?></h1> -->
+                                <div class="col-lg-12">
+                                    <div class="blog__item set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                        <div class="blog__item__text">
+                                            <div class="rating">
+                                                <?php for ($x = 0; $x < $rate; $x++) { ?>
+                                                    <i><span class="fa fa-star"></span></i>
+                                                <?php } ?>
+                                            </div>
+                                            <h4><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php } else { ?>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__item small__item set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                        <div class="blog__item__text">
+                                            <?php for ($x = 0; $x < $rate; $x++) { ?>
+                                                <i><span class="fa fa-star"></span></i>
+                                            <?php } ?>
+                                            <h4><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">Bok no Hero Academia Season 4 – 18</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        <?php } else { ?>
+                            <?php if (($i == 1) or ($i == 3) or ($i == 0) or ($i == 4)) { ?>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__item small__item set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                        <div class="blog__item__text">
+                                            <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                            <h4><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?= $i; ?></a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } else { ?>
+                                <div class="col-lg-12">
+                                    <div class="blog__item set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                        <div class="blog__item__text">
+                                            <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                            <h4><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?= $i; ?></a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
+                        <?php $i++; ?>
+                        <?php if (($i % 6 == 0) or ($i == 0)) { ?>
+                        </div>
+                    </div>
+                <?php $i = 0;
+                            $kolom = 1;
+                        }
+                ?>
+            <?php endforeach; ?>
+            <!-- <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="blog__item set-bg" data-setbg="img/blog/blog-1.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-4.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Bok no Hero Academia Season 4 – 18</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-5.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="blog__item set-bg" data-setbg="img/blog/blog-7.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Housekishou Richard shi no Nazo Kantei Season 08 - 20</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-10.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-11.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Building a Better LiA Drilling Down</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-2.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-3.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Building a Better LiA Drilling Down</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="blog__item set-bg" data-setbg="img/blog/blog-6.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-8.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Bok no Hero Academia Season 4 – 18</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item small__item set-bg" data-setbg="img/blog/blog-9.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Fate/Stay Night: Untimated Blade World</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="blog__item set-bg" data-setbg="img/blog/blog-12.jpg">
+                                    <div class="blog__item__text">
+                                        <p><span class="icon_calendar"></span> 01 March 2020</p>
+                                        <h4><a href="#">Yuri Kuma Arashi Viverra Tortor Pharetra</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <?= $this->endSection(); ?>

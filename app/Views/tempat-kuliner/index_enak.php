@@ -8,7 +8,8 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <a href="/"><i class="fa fa-home"></i> Homepage</a>
-                    <span>Tempat Kuliner</span>
+                    <a href="/tempat-kuliner">Tempat Kuliner</a>
+                    <span>Enak</span>
                 </div>
             </div>
         </div>
@@ -21,7 +22,7 @@
         <div class="col">
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="section-title">
-                    <h4 style="margin-top: 32px;">Daftar Tempat Kuliner</h4>
+                    <h4 style="margin-top: 32px;">Daftar Tempat Kuliner Yang Enak</h4>
 
                     <!-- Button Tambah Tempat Kuliner -->
                     <?php if (session()->getFlashdata('pesan')) : ?>
