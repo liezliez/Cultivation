@@ -24,4 +24,11 @@ class tempatkulinerModel extends Model
         }
         return $this->where(['slug' => $slug])->first();
     }
+    public function getTempatkByRating()
+    {
+        return $this->db->table('tempatkuliner')
+            ->where('rating', 5)
+            ->get()
+            ->getResultArray();
+    }
 }

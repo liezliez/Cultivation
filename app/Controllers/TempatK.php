@@ -21,10 +21,56 @@ class TempatK extends BaseController
         $data = [
             'title' => 'Daftar Tempat Kuliner',
             'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-            'reviews' => $this->reviewModel->getAllReview()
+            'reviews' => $this->reviewModel->getAllReview(),
         ];
 
         return view('tempat-kuliner/index', $data);
+    }
+    public function murah()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+            'reviews' => $this->reviewModel->getAllReview(),
+        ];
+
+        return view('tempat-kuliner/index_murah', $data);
+    }
+
+    public function bersih()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+            'reviews' => $this->reviewModel->getAllReview(),
+        ];
+
+        return view('tempat-kuliner/index_bersih', $data);
+    }
+
+    public function enak()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+            'reviews' => $this->reviewModel->getAllReview(),
+        ];
+
+        return view('tempat-kuliner/index_enak', $data);
+    }
+
+    public function ratingTertinggi()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatkByRating(),
+        ];
+
+        return view('tempat-kuliner/index_rating_tertinggi', $data);
     }
 
     public function detail($slug)
@@ -33,7 +79,8 @@ class TempatK extends BaseController
         $data = [
             'title' => 'Detail Tempat Kuliner',
             'tempatk' => $this->tempatkulinerModel->getTempatk($slug),
-            'reviews' => $this->reviewModel->getAllReview()
+            'reviews' => $this->reviewModel->getAllReview(),
+            'review' => $this->reviewModel->getAllReviewBySlug($slug)
         ];
 
         /* Jika gak ada */
@@ -121,13 +168,13 @@ class TempatK extends BaseController
                     ]
                 ],
                 'jam_buka' => [
-                    'rules' => 'required[tempatkuliner.jam_buka]',
+                    'rules' => 'required[jam_buka.deskripsi]',
                     'errors' => [
                         'required' => '{field} harus diisi'
                     ]
                 ],
                 'jam_tutup' => [
-                    'rules' => 'required[tempatkuliner.jam_tutup]',
+                    'rules' => 'required[jam_tutup.deskripsi]',
                     'errors' => [
                         'required' => '{field} harus diisi'
                     ]
@@ -168,6 +215,7 @@ class TempatK extends BaseController
             'harga_max' => $this->request->getVar('harga_max'),
             'jam_buka' => $this->request->getVar('jam_buka'),
             'jam_tutup' => $this->request->getVar('jam_tutup'),
+            'gambar' => $namaGambar,
         ]);
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
         return redirect()->to('/tempat-kuliner');
@@ -287,16 +335,16 @@ class TempatK extends BaseController
         // cek gambar , gambar lama atau baru
 
         $fileGambar = $this->request->getFile('gambar');
-
+        $gambar_lama = $this->request->getVar('gambarLama');
         // kalau ternyata make gambar lama
         if ($fileGambar->getError() == 4) {
-            $namaGambar = $this->request->getVar('gambarLama');
+            $namaGambar = $gambar_lama;
             // kalau ternyata ganti gambar
         } else {
             $namaGambar = $fileGambar->getName();
             $fileGambar->move('img/tempat-kuliner', $namaGambar);
             // hapus gambar lama
-            unlink('img/tempat-kuliner/' . $this->request->getVar('gambarLama'));
+            unlink('img/tempat-kuliner/' . $gambar_lama);
         }
 
         $slug = url_title($this->request->getVar('nama'), '-', true);

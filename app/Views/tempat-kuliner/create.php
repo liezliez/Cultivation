@@ -75,7 +75,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <textarea class="form-control" id="deskripsi" name="deskripsi" <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?> value="<?php (old('deskripsi')) ?>"></textarea>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?>><?php (old('deskripsi')) ?></textarea>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('deskripsi'); ?>
                                 </div>
@@ -104,7 +104,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <select name="kategori" class="form-control custom-select" id="kategori">
+                                <select name="kategori" class="form-control custom-select" id="kategori" value="<?php (old('kategori')) ?>">
                                     <option value="">Pilih Kategori</option>
                                     <option value="murah">Murah</option>
                                     <option value="enak">Enak</option>
@@ -124,7 +124,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <select name="rating" class="form-control custom-select" id="rating">
+                                <select name="rating" class="form-control custom-select" id="rating" value="<?php (old('deskripsi')) ?>">
                                     <option>Pilih Rating</option>
                                     <option value=1>1</option>
                                     <option value=2>2</option>
@@ -146,7 +146,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="time" id="jam_buka" name="jam_buka">
+                                <input type="time" id="jam_buka" name="jam_buka" value="<?php (old('deskripsi')) ?>">
                             </div>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('jam_buka'); ?>
@@ -160,7 +160,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="time" id="jam_tutup" name="jam_tutup">
+                                <input type="time" id="jam_tutup" name="jam_tutup" value="<?php (old('deskripsi')) ?>">
                             </div>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('jam_tutup'); ?>
@@ -174,7 +174,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="number" id="harga_min" name="harga_min" step="1000" min="500">
+                                <input type="number" id="harga_min" name="harga_min" step="1000" min="1000" value="<?php (old('deskripsi')) ?>">
                             </div>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('harga_min'); ?>
@@ -188,7 +188,7 @@
                                 </div>
                             </label>
                             <div class="col-sm-9">
-                                <input type="number" id="harga_max" name="harga_max" step="1000" min="500">
+                                <input type="number" id="harga_max" name="harga_max" step="1000" min="1000" value="<?php (old('deskripsi')) ?>">
                             </div>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('harga_max'); ?>

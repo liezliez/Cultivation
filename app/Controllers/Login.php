@@ -17,12 +17,12 @@ class Login extends BaseController
     {
         /* Ngambil Data dari Form */
         $users = new UsersModel();
-        $username = $this->request->getVar('username');
+        $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
         /* Cari Data user di Database */
         $dataUser = $users->where([
-            'username' => $username,
+            'email' => $email,
         ])->first();
 
         if ($dataUser) {
@@ -48,7 +48,7 @@ class Login extends BaseController
                 return redirect()->back();
             }
         } else {
-            session()->setFlashdata('error', 'Username Salah');
+            session()->setFlashdata('error', 'email Salah');
             return redirect()->back();
         }
     }

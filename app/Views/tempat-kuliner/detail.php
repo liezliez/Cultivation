@@ -48,24 +48,24 @@ use CodeIgniter\I18n\Time; ?>
                                     <a href="#"><i class="fa fa-star"></i></a>
                                 <?php } ?>
                             </div>
-                            <span>Rating dari kami : <?php
-                                                        switch ($rate) {
-                                                            case 1:
-                                                                echo "Buruk";
-                                                                break;
-                                                            case 2:
-                                                                echo "Lumayan";
-                                                                break;
-                                                            case 3:
-                                                                echo "Baik";
-                                                                break;
-                                                            case 4:
-                                                                echo "Sangat Baik";
-                                                                break;
-                                                            default:
-                                                                echo "Auto Langganan";
-                                                        }
-                                                        ?></span>
+                            <span>Rating kami : <?php
+                                                switch ($rate) {
+                                                    case 1:
+                                                        echo "Buruk";
+                                                        break;
+                                                    case 2:
+                                                        echo "Lumayan";
+                                                        break;
+                                                    case 3:
+                                                        echo "Baik";
+                                                        break;
+                                                    case 4:
+                                                        echo "Sangat Baik";
+                                                        break;
+                                                    default:
+                                                        echo "Auto Langganan";
+                                                }
+                                                ?></span>
                         </div>
                         <p><?= $tempatk['deskripsi']; ?></p>
                         <div class="anime__details__widget">
@@ -90,7 +90,7 @@ use CodeIgniter\I18n\Time; ?>
                             </div>
                         </div>
                         <div class="anime__details__btn">
-                            <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
+                            <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Like</a>
                             <a href="#comment-section" class="watch-btn"><span> Beri Review</span></a>
                             <a href="/tempat-kuliner/edit/<?= $tempatk['slug']; ?>" class="follow-btn ml-2"> <i class="fa fa-pencil-square-o" aria-hidden="true"> </i> Edit</a>
                             <form action="/tempat-kuliner/<?= $tempatk['id']; ?>" method="POST" class="d-inline">

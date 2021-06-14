@@ -44,7 +44,6 @@
 
             <div class="trending__product">
                 <div class="row">
-                    <?php $i = 1; ?>
                     <?php foreach ($tempatkuliner as $tempatk) : ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
@@ -59,7 +58,7 @@
                                         <ul>
                                             <li><?php echo $tempatk['kategori'] ?></li>
                                         </ul>
-                                        <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?= $tempatk['nama']; ?></a></h5>
+                                        <h5><a href="#"><?= $tempatk['nama']; ?></a></h5>
                                     </div>
                                 </a>
                             </div>
@@ -69,6 +68,5 @@
             </div>
         </div>
     </div>
-</div>
 
-<?= $this->endSection(); ?>
+    <?= $this->endSection(); ?>

@@ -24,12 +24,9 @@
                             } ?>
                             <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
-                                    <li><a href="./categories.html">Murah</a></li>
-                                    <li><a href="./anime-details.html">Kenyang</a></li>
-                                    <li><a href="./anime-watching.html">Mewah</a></li>
-                                    <li><a href="./blog-details.html">Pedas</a></li>
-                                    <li><a href="./signup.html">Cepat Saji</a></li>
-                                    <li><a href="./login.html">populer Nongkrong</a></li>
+                                    <li><a href="/TempatK/murah">Murah</a></li>
+                                    <li><a href="/TempatK/bersih">Bersih</a></li>
+                                    <li><a href="/TempatK/enak">Enak</a></li>
                                 </ul>
                             </li>
                             <li><a href="/tentang-kami">Tentang Kami</a></li>

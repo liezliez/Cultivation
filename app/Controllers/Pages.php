@@ -2,13 +2,20 @@
 
 namespace App\Controllers;
 
+use \App\Models\TempatkulinerModel;
+
 class Pages extends BaseController
 {
+	public function __construct()
+	{
+		$this->tempatkulinerModel = new TempatkulinerModel();
+	}
 
 	public function home()
 	{
 		$data = [
-			'title' => 'Cultivation | Cari Tempat Kulinermu Disini'
+			'title' => 'Cultivation | Cari Tempat Kulinermu Disini',
+			'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
 		];
 		return view('/pages/home', $data);
 	}

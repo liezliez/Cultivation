@@ -46,29 +46,28 @@
                 <div class="row">
                     <?php $i = 1; ?>
                     <?php foreach ($tempatkuliner as $tempatk) : ?>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
-                                    <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
-                                        <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
-                                        <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                        <div class="view"><i class="fa fa-star">
-                                            </i> Rating <?php echo $tempatk['rating']; ?>/5</div>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li><?php echo $tempatk['kategori'] ?></li>
-                                        </ul>
-                                        <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?= $tempatk['nama']; ?></a></h5>
-                                    </div>
-                                </a>
+                        <?php if ($tempatk['kategori'] == 'enak') { ?>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
+                                        <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                            <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
+                                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
+                                            <div class="view"><i class="fa fa-star">
+                                                </i> Rating <?php echo $tempatk['rating']; ?>/5</div>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <ul>
+                                                <li><?php echo $tempatk['kategori'] ?></li>
+                                            </ul>
+                                            <h5><a href="#"><?= $tempatk['nama']; ?></a></h5>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                            <<?php } ?> <?php endforeach; ?> </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<?= $this->endSection(); ?>
+        <?= $this->endSection(); ?>
