@@ -15,6 +15,7 @@ class TempatK extends BaseController
         $this->reviewModel = new ReviewModel();
     }
 
+    // Index return Controller
     public function index()
     {
 
@@ -25,59 +26,8 @@ class TempatK extends BaseController
 
         return view('tempat-kuliner/index', $data);
     }
-    public function murah()
-    {
 
-        $data = [
-            'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-        ];
-
-        return view('tempat-kuliner/index_murah', $data);
-    }
-
-    public function bersih()
-    {
-
-        $data = [
-            'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-        ];
-
-        return view('tempat-kuliner/index_bersih', $data);
-    }
-
-    public function enak()
-    {
-
-        $data = [
-            'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-        ];
-
-        return view('tempat-kuliner/index_enak', $data);
-    }
-
-    public function easterEgg()
-    {
-        $data = [
-            'title' => 'Cultivation | Tentang Kami',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
-        ];
-        return view('/pages/easterEgg', $data);
-    }
-
-    public function ratingTertinggi()
-    {
-
-        $data = [
-            'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatkByRating(),
-        ];
-
-        return view('tempat-kuliner/index_rating_tertinggi', $data);
-    }
-
+    // Menampilkan Detail Tempat Kuliner berdasarkan Slug
     public function detail($slug)
     {
 
@@ -96,6 +46,7 @@ class TempatK extends BaseController
         return view('tempat-kuliner/detail', $data);
     }
 
+    // Menambah Tempat Kuliener Baru
     public function create()
     {
         $data = [
@@ -108,10 +59,11 @@ class TempatK extends BaseController
         return view('tempat-kuliner/create', $data);
     }
 
+    // Validasi dan Insert Data ke Database
     public function save()
     {
 
-        // validasi
+        // validasi dengan aturan inputan yang telah kami tentukan
         if (!$this->validate(
             [
                 'nama' => [
@@ -186,12 +138,11 @@ class TempatK extends BaseController
                 ],
             ]
         )) {
-            // $validation = \Config\Services::validation();
-            // return redirect()->to('/tempat-kuliner/tambah')->withInput()->with('validation', $validation);
+            // Jika Rules Tidak Terpenuhi
             return redirect()->to('/tempat-kuliner/tambah')->withInput();
         }
 
-        // ambil gambar
+        // Fungsi ambil gambar dari Upload Request
         $fileGambar = $this->request->getFile('gambar');
 
         // kalau gaada gambar
@@ -204,9 +155,7 @@ class TempatK extends BaseController
             $fileGambar->move('img/tempat-kuliner');
         }
 
-
         // Insert Database
-
         $slug = url_title($this->request->getVar('nama'), '-', true);
         $this->tempatkulinerModel->save([
             'nama' => $this->request->getVar('nama'),
@@ -226,16 +175,17 @@ class TempatK extends BaseController
         return redirect()->to('/tempat-kuliner');
     }
 
-    public function delete($id)
+    // Fungsi Delete Tempat Kuliner berdasarkan parameter ID
+    public function delete($slug)
     {
         // hapus gambar di public
-        $tempatkulinerModel = $this->tempatkulinerModel->find($id);
+        $tempatkulinerModel = $this->tempatkulinerModel->find($slug);
         // kalau gambar default
         if ($tempatkulinerModel['gambar'] != 'default.jpg') {
             unlink('img/tempat-kuliner/' . $tempatkulinerModel['gambar']);
         }
         // hapus data di database
-        $this->tempatkulinerModel->delete($id);
+        $this->tempatkulinerModel->delete($slug);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('/tempat-kuliner');
     }
@@ -371,5 +321,58 @@ class TempatK extends BaseController
         ]);
         session()->setFlashdata('pesan', 'Data berhasil diubah');
         return redirect()->to('/tempat-kuliner');
+    }
+
+    public function murah()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+        ];
+
+        return view('tempat-kuliner/index_murah', $data);
+    }
+
+    public function bersih()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+        ];
+
+        return view('tempat-kuliner/index_bersih', $data);
+    }
+
+    public function enak()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+        ];
+
+        return view('tempat-kuliner/index_enak', $data);
+    }
+
+    public function easterEgg()
+    {
+        $data = [
+            'title' => 'Cultivation | Tentang Kami',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+        ];
+        return view('/pages/easterEgg', $data);
+    }
+
+    public function ratingTertinggi()
+    {
+
+        $data = [
+            'title' => 'Daftar Tempat Kuliner',
+            'tempatkuliner' => $this->tempatkulinerModel->getTempatkByRating(),
+        ];
+
+        return view('tempat-kuliner/index_rating_tertinggi', $data);
     }
 }

@@ -55,11 +55,4 @@ class Pages extends BaseController
 		];
 		return view('/pages/tentangkami', $data);
 	}
-	public function easterEgg()
-	{
-		$data = [
-			'title' => 'Cultivation | Tentang Kami'
-		];
-		return view('/pages/easterEgg', $data);
-	}
 }

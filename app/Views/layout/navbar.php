@@ -41,7 +41,7 @@
                 echo '
                         <div class="col-lg-2">
                             <div class="header__right">
-                                <a style="display: inline-block;" "href="/profile" class="ml-1">' . $username . ' | </a> <br>
+                                <a href="/profile" class="ml-1">' . $username . ' | </a> <br>
                                 <a href="/logout" class="logout">Logout <span class="fa fa-sign-out"></span></a>
                             </div>
                         </div>';
@@ -53,12 +53,6 @@
                             </div>
                         </div>';
             } ?>
-
-            <!-- <div class="col-lg-3">
-                <div class="header__right">
-                    <a href="/login" class="login-switch ml-4 mr-0">Login | Sign-up <span class="icon_profile"></a>
-                </div>
-            </div> -->
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>

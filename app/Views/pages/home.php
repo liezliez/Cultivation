@@ -91,29 +91,29 @@
             <div class="product__sidebar">
                 <div class="product__sidebar__view">
                     <div class="section-title">
-                        <h5>Paling Sering Dicari</h5>
+                        <h5>Yang Paling Banyak Disukai</h5>
                     </div>
                     <ul class="filter__controls">
-                        <li class="Kenyang" data-filter="*">Day</li>
+                        <!-- <li class="Kenyang" data-filter="*">Day</li>
                         <li data-filter=".week">Week</li>
                         <li data-filter=".month">Month</li>
-                        <li data-filter=".years">Years</li>
+                        <li data-filter=".years">Years</li> -->
                     </ul>
                     <div class="filter__gallery">
                         <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                            <div class="ep">Sekitar 12k/Menu</div>
+                            <div class="ep">Mulai Dari 12k - 50k</div>
                             <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                            <h5><a href="#">Starbuck</a></h5>
+                            <h5><a href="#">Shelter</a></h5>
                         </div>
                         <div class="product__sidebar__view__item set-bg mix month week" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                            <div class="ep">Sekitar 12k/Menu</div>
+                            <div class="ep">Mulai Dari 12k - 50k</div>
                             <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                            <h5><a href="#">Solaria</a></h5>
+                            <h5><a href="#">Southbank</a></h5>
                         </div>
                         <div class="product__sidebar__view__item set-bg mix week years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                            <div class="ep">Sekitar 12k/Menu</div>
+                            <div class="ep">Mulai Dari 12k - 50k</div>
                             <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                            <h5><a href="#">Dunkin Donuts</a></h5>
+                            <h5><a href="#">Sobbers</a></h5>
 
                         </div>
                     </div>

@@ -933,6 +933,12 @@ i:hover {
   line-height: 26px;
 }
 
+.product__item .view a i {
+  color: #fdc200;
+  font-weight: 700;
+  line-height: 26px;
+}
+
 .product__sidebar .section-title h5 {
   color: #ffffff;
   font-weight: 600;
@@ -1282,6 +1288,12 @@ i:hover {
 .anime__details__rating .rating i {
   font-size: 24px;
   color: #e89f12;
+  display: inline-block;
+}
+
+.product__item .view {
+  font-size: 12px;
+  color: #ffffff;
   display: inline-block;
 }
 
