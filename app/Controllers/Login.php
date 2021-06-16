@@ -17,37 +17,38 @@ class Login extends BaseController
     {
         /* Ngambil Data dari Form */
         $users = new UsersModel();
-        $username = $this->request->getVar('username');
+        $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
         /* Cari Data user di Database */
         $dataUser = $users->where([
-            'username' => $username,
+            'email' => $email,
         ])->first();
 
         if ($dataUser) {
-            if (password_verify($password, $dataUser->password)) {
+            if ((password_verify($password, $dataUser['password'])) && (($dataUser['active']) == 1)) {
                 session()->set([
-                    'username' => $dataUser->username,
-                    'email' => $dataUser->email,
-                    'role_id' => $dataUser->role_id,
-                    'gambar' => $dataUser->gambar,
+                    'id' => $dataUser['id'],
+                    'username' => $dataUser['username'],
+                    'email' => $dataUser['email'],
+                    'role_id' => $dataUser['role_id'],
+                    'gambar' => $dataUser['gambar'],
                     'logged_in' => TRUE
                 ]);
                 // Jika role Admin
                 if (session()->role_id == 1) {
-                    return redirect()->to(base_url('admin'));
+                    return redirect()->to(base_url('/'));
                 }
                 // Jika role user
                 else {
-                    return redirect()->to(base_url('user'));
+                    return redirect()->to(base_url('/'));
                 }
             } else {
-                session()->setFlashdata('error', 'Password Salah');
+                session()->setFlashdata('error', 'Password Salah / Akun anda dinonaktifkan');
                 return redirect()->back();
             }
         } else {
-            session()->setFlashdata('error', 'Username Salah');
+            session()->setFlashdata('error', 'email Salah');
             return redirect()->back();
         }
     }

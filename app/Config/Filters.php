@@ -55,17 +55,16 @@ class Filters extends BaseConfig
 					'tempat-kuliner'
 				]
 			],
-			/* 'adminsAuth' =>
+			'adminsAuth' =>
 			[
 				'except' =>
 				[
 					'login', 'login/*',
 					'register', 'register/*',
-					'/',
 					'tentang-kami',
-					'tempat-kuliner'
+					'tempat-kuliner',
 				]
-			], */
+			],
 		],
 		'after'  => [
 			'toolbar',

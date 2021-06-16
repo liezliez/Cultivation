@@ -1,382 +1,162 @@
-<?= $this->extend('layout/template-user'); ?>
+<?= $this->extend('layout/template'); ?>
 
 <!DOCTYPE html>
 <html lang="english">
+<?php $autoload['helpers'] = array('form', 'myhelper'); ?>
 
 
+<!-- Content Section -->
 <?= $this->section('content'); ?>
-<!-- Hero Section Begin -->
-<section class="hero">
-    <div class="container">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="/img/hero/crisbar.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Kenyang</div>
-                            <div class="label">Pedas</div>
-                            <h2> Ayam Geprek Crisbar</h2>
-                            <p> Ayam Geprek Crisbar adalah populer makan yang berfokus pada Ayam
-                                geprek crispy dimana kita dapat memilih sendiri sambal dan topping ..
-                            </p>
-                            <a href="/tempatkuliner.php"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="/img/hero/baghdad.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Murah</div>
-                            <div class="label">Kenyang</div>
-                            <h2> Ayam Baghdad</h2>
-                            <p> Setiap Mahasiswa yang sering melewati pengkolan sukabirus pasti
-                                sudah tidak asing lagi dengan populer makan yang satu ini ...
-                            </p>
-                            <a href="#"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Murah</div>
-                            <div class="label">Enak</div>
-                            <div class="label">Akhir Bulan</div>
-                            <h2>Warteg Pengkolan</h2>
-                            <p>Warpeng atau Warteg Pengkolan adalah Warung nasi yang terkenal murah dan enak
-                                bagi para mahasiswa-mahasiswi pecinta masakan tegal. Biasanya warung ini ..
-                            </p>
-                            <a href="#"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero Section End -->
 
-<!-- Product Section Begin -->
-<section class="product spad">
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <div class="trending__product">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8">
-                            <div class="section-title">
-                                <h4>Populer</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="btn__all">
-                                <a href="#" class="primary-btn">Lihat Semua <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/trending/crisbar-long.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                        <li>Murah</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                        <li>Bersih</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Warteg Pengkolan</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/trending/crisbar-long.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Warteg Pengkolan</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="popular__product">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8">
-                            <div class="section-title">
-                                <h4>Rating Tertinggi</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="btn__all">
-                                <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/hero/warteg-pengkolan.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/hero/warteg-pengkolan.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/hero/warteg-pengkolan.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="recent__product">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8">
-                            <div class="section-title">
-                                <h4>Baru Ditambahkan</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="btn__all">
-                                <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/recent/baghdad.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/recent/baghdad.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/recent/baghdad.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="product__sidebar">
-                    <div class="product__sidebar__view">
-                        <div class="section-title">
-                            <h5>Paling Sering Dicari</h5>
-                        </div>
-                        <ul class="filter__controls">
-                            <li class="Kenyang" data-filter="*">Day</li>
-                            <li data-filter=".week">Week</li>
-                            <li data-filter=".month">Month</li>
-                            <li data-filter=".years">Years</li>
-                        </ul>
-                        <div class="filter__gallery">
-                            <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                                <div class="ep">Sekitar 12k/Menu</div>
-                                <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                <h5><a href="#">Starbuck</a></h5>
-                            </div>
-                            <div class="product__sidebar__view__item set-bg mix month week" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                                <div class="ep">Sekitar 12k/Menu</div>
-                                <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                <h5><a href="#">Solaria</a></h5>
-                            </div>
-                            <div class="product__sidebar__view__item set-bg mix week years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                                <div class="ep">Sekitar 12k/Menu</div>
-                                <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                <h5><a href="#">Dunkin Donuts</a></h5>
-
-                            </div>
-                        </div>
-                        <div class="product__sidebar__comment">
-                            <div class="section-title">
-                                <h5>Riview Terbaru</h5>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Baghdad</a></h5>
-                                    <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Baghdad</a></h5>
-                                    <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Baghdad</a></h5>
-                                    <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a href="/"><i class="fa fa-home"></i> Homepage</a>
+                    <span>Daftar User</span>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- Product Section End -->
+</div>
+<!-- Breadcrumb End -->
 
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
+                <div class="section-title">
+                    <h4 style="margin-top: 32px;">Daftar User</h4>
+                </div>
+                <div class="card text-white bg-dark">
+                    <div class="card-header">
+                        <!-- <h3 class="card-title" style="font-family: Oswald, sans-serif;">Data User</h3> -->
+                        <div class="card-tools">
+                            <form action="" method="GET">
+                                <div class="input-group input-group-md">
+                                    <input type="text" name="keyword" class="form-control float-right" placeholder="Cari Username">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-secondary" name="submit">Temukan</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="col-11 card-body table-responsive p-0 ml-3">
+                        <table class="table table-striped table-dark table-head-fixed text-nowrap">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope="col" style="width: 70px;">No</th>
+                                    <th scope="col" style="width: 70px;">ID</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Status</th>
+                                    <th>
+                                        Aksi
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Penomoran Pagination -->
+                                <?php $i = 1 + (5 * ($currentPage - 1)); ?>
+                                <?php foreach ($users as $u) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i++; ?></th>
+                                        <td><?= $u['id']; ?></td>
+                                        <td><?= $u['username']; ?></td>
+                                        <td><?= $u['email']; ?></td>
+                                        <td><?= ($u['role_id'] == 1) ? 'admin' : 'user'; ?></td>
+                                        <td><?= ($u['active'] == 1) ? 'aktif' : 'non-aktif'; ?></td>
+                                        <td>
+                                            <button class="btn btn-secondary" data-toggle="modal" data-target="#edit<?= $u['id']; ?>"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-secondary" data-toggle="modal" data-target="#delete<?= $u['id']; ?>"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach;  ?>
+                            </tbody>
+                        </table>
+                        <div class="pagination mb-2">
+                            <?= $pager->links('users', 'user_pagination'); ?>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Edit -->
+    <?php foreach ($users as $key => $value) { ?>
+        <div class="modal fade" id="edit<?= $value['id']; ?>">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Users</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <?php echo form_open('user/editUser/' . $value['id']) ?>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input name="username" value="<?= $value['username']; ?>" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input name="email" value="<?= $value['email']; ?>" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <input name="role_id" value="<?= $value['role_id']; ?>" class="form-control" placeholder="role_id">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <input name="active" value="<?= $value['active']; ?>" class="form-control" placeholder="'1': aktif, '0':nonaktif">
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
+                    </div>
+                    <?php echo form_close() ?>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    <?php }  ?>
+    <!-- Modal delete -->
+    <?php foreach ($users as $key => $value) { ?>
+        <div class="modal fade" id="delete<?= $value['id']; ?>">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete User</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah anda ingin menghapus <b><?= $value['username']; ?></b> ?
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    <?php }  ?>
+</div>
+</div>
 <?= $this->endSection('content'); ?>

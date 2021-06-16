@@ -36,9 +36,14 @@
             </div>
             <div class="col-lg-2">
                 <div class="header__right">
-                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    <a href="/login" class="login-switch ml-4 mr-0"><span class="icon_profile"></a>
-                    <a href="/login" class="ml-1">ADMIN </a>
+                    <?php
+                    $username = session()->get('username');
+                    if (session()->get('logged_in') == true) {
+                        echo '<a href="/profile" class="ml-1">' . $username . ' | </a> <br>
+                              <a href="/logout" class="logout">Logout <span class="fa fa-sign-out"></span></a>';
+                    } else {
+                        echo '<a href="/login" class="login-switch ml-4 mr-0">Login | Sign-up <span class="icon_profile"></a>';
+                    } ?>
                 </div>
             </div>
         </div>

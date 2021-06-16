@@ -141,6 +141,7 @@ ol {
 }
 
 .set-bg {
+  filter: brightness(100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -649,7 +650,7 @@ ol {
 }
 
 .hero__items {
-  padding: 250px 0 42px 50px;
+  padding: 250px 0 20px 50px;
   border-radius: 5px;
 }
 
@@ -659,19 +660,22 @@ ol {
 }
 
 .hero__text .label {
-  font-size: 13px;
+  margin: 6px;
+  border-radius: 5px;
+  font-size: 18px;
   color: #e53637;
   background: #ffffff;
   padding: 5px 14px 3px;
   display: inline-block;
   position: relative;
   top: -100px;
-  -webkit-transition: all, 0.2s;
-  -o-transition: all, 0.2s;
-  transition: all, 0.2s;
+  -webkit-transition: all, 1s;
+  -o-transition: all, 1s;
+  transition: all, 1s;
 }
 
 .hero__text h2 {
+  margin: 6px;
   color: #ffffff;
   font-size: 42px;
   font-family: "Oswald", sans-serif;
@@ -681,33 +685,38 @@ ol {
   margin-bottom: 8px;
   position: relative;
   top: -100px;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all, 2s;
+  -o-transition: all, 2s;
+  transition: all, 2s;
 }
 
 .hero__text p {
+  backdrop-filter: blur(2px);
+  margin: 12px;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 40px;
   position: relative;
   top: -100px;
   opacity: 0;
-  -webkit-transition: all, 0.6s;
-  -o-transition: all, 0.6s;
-  transition: all, 0.6s;
+  -webkit-transition: all, 2s;
+  -o-transition: all, 2s;
+  transition: all, 2s;
 }
 
 .hero__text a {
   position: relative;
   top: -100px;
   opacity: 0;
-  -webkit-transition: all, 0.8s;
-  -o-transition: all, 0.8s;
-  transition: all, 0.8s;
+  -webkit-transition: all, 2s;
+  -o-transition: all, 2s;
+  transition: all, 2s;
 }
 
 .hero__text a span {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
   font-size: 13px;
   color: #ffffff;
   background: #e53637;
@@ -920,6 +929,12 @@ i:hover {
 
 .product__item__text h5 a {
   color: #ffffff;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.product__item .view a i {
+  color: #fdc200;
   font-weight: 700;
   line-height: 26px;
 }
@@ -1155,6 +1170,54 @@ i:hover {
   padding-top: 60px;
 }
 
+.image__profile {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.dropbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
 .anime__details__content {
   margin-bottom: 65px;
 }
@@ -1225,6 +1288,12 @@ i:hover {
 .anime__details__rating .rating i {
   font-size: 24px;
   color: #e89f12;
+  display: inline-block;
+}
+
+.product__item .view {
+  font-size: 12px;
+  color: #ffffff;
   display: inline-block;
 }
 
@@ -1395,7 +1464,7 @@ i:hover {
 .anime__details__form form textarea {
   width: 100%;
   font-size: 15px;
-  color: #b7b7b7;
+  color: #0d0d0d;
   padding-left: 20px;
   padding-top: 12px;
   height: 110px;
@@ -2325,9 +2394,9 @@ i:hover {
     position: relative;
   }
   .header__right {
-    position: absolute;
-    right: 120px;
-    top: -42px;
+    /* position: absolute; */
+    /* right: 120px;
+    top: 0px; */
     padding: 0;
   }
   .header__menu {
@@ -2651,9 +2720,7 @@ h1
 }
 */
 
-
-.main
-{
+.main {
   width: 100%;
   min-height: 550px;
   text-align: center;
@@ -2661,9 +2728,7 @@ h1
   cursor: pointer;
 }
 
-
-.service
-{
+.service {
   background: white;
   padding: 30px;
   border-radius: 10px;
@@ -2671,12 +2736,11 @@ h1
   bottom: 0;
   box-shadow: 0 0 20px -15px black;
   z-index: 1;
-  transition: transform .7s;
+  transition: transform 0.7s;
   font-family: "Oswald", sans-serif;
 }
 
-.service-logo 
-{
+.service-logo {
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -2686,16 +2750,14 @@ h1
   background: white;
 }
 
-.service-logo img
-{
+.service-logo img {
   width: 100%;
-  filter:grayscale(100%);
+  filter: grayscale(100%);
   transition: 0.4s all;
   border-radius: 50%;
 }
 
-.service h4
-{
+.service h4 {
   height: 35px;
   width: 80%;
   background: white;
@@ -2704,9 +2766,8 @@ h1
   font-family: "Oswald", sans-serif;
 }
 
-.service h4::after
-{
-  content: '';
+.service h4::after {
+  content: "";
   width: 40px;
   height: 30px;
   background: linear-gradient(to right, white, #5205f0);
@@ -2716,9 +2777,8 @@ h1
   z-index: -1;
 }
 
-.service h4::before
-{
-  content: '';
+.service h4::before {
+  content: "";
   width: 40px;
   height: 30px;
   background: linear-gradient(to right, #5205f0, white);
@@ -2728,8 +2788,7 @@ h1
   z-index: -1;
 }
 
-.shadow1
-{
+.shadow1 {
   height: 200px;
   width: 80%;
   background: white;
@@ -2739,11 +2798,10 @@ h1
   left: 10%;
   z-index: -1;
   box-shadow: 0 0 20px -15px black;
-  transition: transform .7s;
+  transition: transform 0.7s;
 }
 
-.shadow2
-{
+.shadow2 {
   height: 200px;
   width: 64%;
   background: white;
@@ -2754,17 +2812,13 @@ h1
   z-index: -2;
 }
 
-.main:hover .service
-{
+.main:hover .service {
   transform: translateY(-50px);
 }
 
-.main:hover .shadow1
-{
+.main:hover .shadow1 {
   transform: translateY(-25px);
 }
-
-
 
 /* css about_us_v2 */
 /*
