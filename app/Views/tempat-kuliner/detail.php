@@ -77,7 +77,7 @@ use CodeIgniter\I18n\Time; ?>
                                             <?php echo date('G:i', strtotime($tempatk['jam_buka'])); ?> -
                                             <?php echo date('G:i', strtotime($tempatk['jam_tutup'])); ?>
                                         </li>
-                                        <li><span>Harga:</span> Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></li>
+                                        <li><span>Harga:</span> Rp.<?php echo $tempatk['harga_min'] ?> - Rp.<?php echo $tempatk['harga_max'] ?></li>
                                         <li><span>Rating:</span><i class="fa fa-star"></i> <?php echo $rate ?>/5</li>
                                         <!-- <li><span>Kategori :</span> Murah, Enak, Banyak, Bersih</li> -->
                                     </ul>
