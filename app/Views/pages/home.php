@@ -1,12 +1,13 @@
-//Menggunakan template navbar
 <?= $this->extend('layout/template'); ?>
 
 <!DOCTYPE html>
 <html lang="english">
 
 
+
 <?= $this->section('content'); ?>
 <!-- Hero Section Begin -->
+
 <section class="hero">
     <div class="container">
         <div class="hero__slider owl-carousel">
@@ -61,7 +62,7 @@
 </section>
 <!-- Hero Section End -->
 
-<!-- Item Section Begin -->
+<!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
         <div class="row">
@@ -378,6 +379,6 @@
         </div>
     </div>
 </section>
-<!-- Item Section End -->
 
+<!-- Product Section End -->
 <?= $this->endSection('content'); ?>
