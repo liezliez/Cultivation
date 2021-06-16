@@ -57,6 +57,6 @@ class Pages extends BaseController
 			'title' => 'Cultivation | Tentang Kami',
 			'kami' => $this->kamiModel->findAll(),
 		];
-		return view('/pages/tentangkami', $data);
+		return view('/pages/tentang-kami', $data);
 	}
 }
