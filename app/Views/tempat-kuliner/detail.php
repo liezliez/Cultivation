@@ -31,7 +31,7 @@ use CodeIgniter\I18n\Time; ?>
             <div class="row">
                 <div class="col-lg-3">
                     <div class="anime__details__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
-                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                        <div class="comment"><i class="fa fa-comments"></i> <?php echo $countReviews ?></div>
                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
                     </div>
                 </div>
@@ -121,15 +121,7 @@ use CodeIgniter\I18n\Time; ?>
                                 <img src="<?php echo base_url('img/user/' . $value['gambar']) ?>" alt="">
                             </div>
                             <div class="anime__review__item__text">
-
-                                <h6><?php echo $value['username'] ?> -
-                                    <span>
-                                        <?php
-                                        // echo $value['slug'];
-                                        echo $review;
-                                        ?>
-                                    </span>
-                                </h6>
+                                <h6><?php echo $value['username'] ?></h6>
                                 <p><?php echo $value['review']; ?></p>
                             </div>
                         </div>
@@ -161,26 +153,21 @@ use CodeIgniter\I18n\Time; ?>
                     <div class="section-title">
                         <h5>Yang mungkin kamu suka</h5>
                     </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/crisbar.jpg">
-                        <div class="ep">10k - 20k/Porsi ?</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/crisbar.jpg">
-                        <div class="ep">10k - 20k/Porsi</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/crisbar.jpg">
-                        <div class="ep">10k - 20k/Porsi</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/crisbar.jpg">
-                        <div class="ep">10k - 20k/Porsi</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                    </div>
+                    <?php $i = 1; ?>
+                    <?php foreach ($tempatk_sama as $tmptk => $value) : ?>
+                        <?php if ($value['slug'] != $tempatk['slug']) { ?>
+                            <div class="product__sidebar__view__item set-bg" data-setbg="<?php echo base_url('img/tempat-kuliner/' . $value['gambar']) ?>">
+                                <div class="ep"><?php echo $value['harga_min'] ?> - <?php echo $value['harga_max'] ?></div>
+                                <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
+                                <h5><a href="#"><?php echo $value['nama'] ?></a></h5>
+                            </div>
+                        <?php } ?>
+                        <?php $i++;
+                        if ($i > 3) {
+                            break;
+                        } ?>
+                    <?php endforeach ?>
+
                 </div>
             </div>
         </div>

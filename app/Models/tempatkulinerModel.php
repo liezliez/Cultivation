@@ -17,6 +17,10 @@ class tempatkulinerModel extends Model
         'jam_buka',     'jam_tutup',
     ];
 
+    public function getAllTempatk()
+    {
+        return $this->findAll();
+    }
     public function getTempatk($slug = false)
     {
         if ($slug == false) {
@@ -28,6 +32,14 @@ class tempatkulinerModel extends Model
     {
         return $this->db->table('tempatkuliner')
             ->where('rating', 5)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getTempatkByKategori($kategori_tempat)
+    {
+        return $this->db->table('tempatkuliner')
+            ->where('kategori', $kategori_tempat)
             ->get()
             ->getResultArray();
     }

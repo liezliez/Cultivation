@@ -21,7 +21,8 @@ class TempatK extends BaseController
 
         $data = [
             'title' => 'Daftar Tempat Kuliner',
-            'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+            'tempatk' => $this->tempatkulinerModel->getTempatk(),
+
         ];
 
         return view('tempat-kuliner/index', $data);
@@ -32,17 +33,22 @@ class TempatK extends BaseController
     {
 
         $data = [
-            'title' => 'Detail Tempat Kuliner',
             'tempatk' => $this->tempatkulinerModel->getTempatk($slug),
-            'reviews' => $this->reviewModel->getAllReview(),
-            'review' => $this->reviewModel->getAllReviewBySlug($slug)
+            // 'reviews' => $this->reviewModel->getAllReview(),
         ];
 
         /* Jika gak ada */
         if (empty($data['tempatk'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Nama Tempat ' . $slug . ' Tidak Ditemukan');
         }
-
+        $tempatk_sama = $this->tempatkulinerModel->getTempatkByKategori($data['tempatk']['kategori']);
+        $data = [
+            'title' => 'Detail Tempat Kuliner',
+            'tempatk_sama' => $tempatk_sama,
+            'tempatk' => $this->tempatkulinerModel->getTempatk($slug),
+            'reviews' => $this->reviewModel->getAllReviewBySlug($slug),
+            'countReviews' => $this->reviewModel->countAllReviewBySlug($slug),
+        ];
         return view('tempat-kuliner/detail', $data);
     }
 

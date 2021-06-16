@@ -66,7 +66,7 @@
                                             <ul>
                                                 <li><?php echo $tempatk['kategori'] ?></li>
                                             </ul>
-                                            <h5><a href="#"><?= $tempatk['nama']; ?></a></h5>
+                                            <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?= $tempatk['nama']; ?></a></h5>
                                         </div>
                                     </a>
                                 </div>

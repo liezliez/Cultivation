@@ -38,11 +38,23 @@ class reviewModel extends Model
         return $this->db->table('review')
             ->join('users', 'users.id=review.user_id')
             ->where('tempat_kuliner_slug', $slug)
+            ->where('active', '1')
             // ->orderBy('id', 'ASC')
             ->get()
             ->getResultArray();
     }
 
+    public function countAllReviewBySlug($slug)
+    {
+        $review = $this->db->table('review')
+            ->join('users', 'users.id=review.user_id')
+            ->where('tempat_kuliner_slug', $slug)
+            ->where('active', '1')
+            // ->orderBy('id', 'ASC')
+            ->get()
+            ->getResultArray();
+        return count($review);
+    }
 
 
     //Fungsi Edit User berdasarkan id, berbentuk object

@@ -33,8 +33,7 @@
                     <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 1)) {
                         echo '  <div class="anime__details__btn">
                                 <a href="/tempat-kuliner/tambah" class="tambah-btn">Tambah</a>
-                                </div>
-                            ';
+                                </div> ';
                     }
                     ?>
                 </div>
@@ -43,14 +42,13 @@
             <!-- List Daftar Tempat Kuliner -->
             <div class="trending__product">
                 <div class="row">
-                    <?php foreach ($tempatkuliner as $tempatk) : ?>
+                    <?php foreach ($tempatk as $tempatk) : ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
                                     <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
                                         <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
-                                        <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-
+                                        <!-- <div class="comment"><i class="fa fa-comments"></i></div> -->
                                         <div class="view">
                                             <i class="fa fa-star"></i> Rating <?php echo $tempatk['rating']; ?>/5
                                         </div>
