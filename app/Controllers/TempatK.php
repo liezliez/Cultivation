@@ -24,7 +24,6 @@ class TempatK extends BaseController
             $tempatkuliner = $this->tempatkulinerModel->search($keyword);
         } else {
             $tempatkuliner = $this->tempatkulinerModel->findAll();
-            session()->setFlashdata('pesan', 'Tempat Kuliner Tidak Ditemukan');
         }
 
         $data = [
