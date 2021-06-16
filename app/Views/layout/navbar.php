@@ -15,12 +15,14 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <!-- QUERY NAVBAR -->
+                            <!-- Check NAVBAR -->
+
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
                             <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 1)) {
                                 echo
-                                '<li><a href="/user">User</a></li>';
+                                '<li><a href="/user">User</a></li>
+                                 <li><a href="/feedback">Feedback</a></li>';
                             } ?>
                             <li><a href="./categories.html">Daya Tarik<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
@@ -29,7 +31,11 @@
                                     <li><a href="/TempatK/enak">Enak</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/tentang-kami">Tentang Kami</a></li>
+                            <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 2)) {
+                                echo
+                                '<li><a href="/tentang-kami">Tentang Kami</a></li>';
+                            } ?>
+
                         </ul>
                     </nav>
                 </div>

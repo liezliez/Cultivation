@@ -26,13 +26,13 @@ class Login extends BaseController
         ])->first();
 
         if ($dataUser) {
-            if ((password_verify($password, $dataUser->password)) && (($dataUser->active) == 1)) {
+            if ((password_verify($password, $dataUser['password'])) && (($dataUser['active']) == 1)) {
                 session()->set([
-                    'id' => $dataUser->id,
-                    'username' => $dataUser->username,
-                    'email' => $dataUser->email,
-                    'role_id' => $dataUser->role_id,
-                    'gambar' => $dataUser->gambar,
+                    'id' => $dataUser['id'],
+                    'username' => $dataUser['username'],
+                    'email' => $dataUser['email'],
+                    'role_id' => $dataUser['role_id'],
+                    'gambar' => $dataUser['gambar'],
                     'logged_in' => TRUE
                 ]);
                 // Jika role Admin

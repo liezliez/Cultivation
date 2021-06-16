@@ -43,6 +43,7 @@
 
             <!-- List Daftar Tempat Kuliner -->
 
+            <!-- List Daftar Tempat Kuliner -->
             <div class="trending__product">
                 <div class="row">
                     <?php $i = 1; ?>
@@ -71,7 +72,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <<?php } ?> <?php endforeach; ?> </div>
+                        <?php } ?> <?php endforeach; ?>
                 </div>
             </div>
         </div>

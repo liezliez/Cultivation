@@ -18,11 +18,17 @@ class TempatK extends BaseController
     // Index return Controller
     public function index()
     {
+        // Untuk Searching
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $tempatkuliner = $this->tempatkulinerModel->search($keyword);
+        } else {
+            $tempatkuliner = $this->tempatkulinerModel->findAll();
+        }
 
         $data = [
             'title' => 'Daftar Tempat Kuliner',
-            'tempatk' => $this->tempatkulinerModel->getTempatk(),
-
+            'tempatk' => $tempatkuliner,
         ];
 
         return view('tempat-kuliner/index', $data);
@@ -55,6 +61,9 @@ class TempatK extends BaseController
     // Menambah Tempat Kuliener Baru
     public function create()
     {
+        if ((session()->get('role_id') != 1)) {
+            return redirect()->back();
+        }
         $data = [
             'title' => 'Tambah Tempat Kuliner',
             'validation' => \Config\Services::Validation()
@@ -68,7 +77,9 @@ class TempatK extends BaseController
     // Validasi dan Insert Data ke Database
     public function save()
     {
-
+        if ((session()->get('role_id') != 1)) {
+            return redirect()->back();
+        }
         // validasi dengan aturan inputan yang telah kami tentukan
         if (!$this->validate(
             [
@@ -184,6 +195,9 @@ class TempatK extends BaseController
     // Fungsi Delete Tempat Kuliner berdasarkan parameter ID
     public function delete($slug)
     {
+        if ((session()->get('role_id') != 1)) {
+            return redirect()->back();
+        }
         // hapus gambar di public
         $tempatkulinerModel = $this->tempatkulinerModel->find($slug);
         // kalau gambar default
@@ -198,17 +212,22 @@ class TempatK extends BaseController
 
     public function edit($slug)
     {
+        if ((session()->get('role_id') != 1)) {
+            return redirect()->back();
+        }
         $data = [
             'title' => 'Edit Tempat Kuliner',
             'validation' => \Config\Services::Validation(),
             'tempatk' => $this->tempatkulinerModel->getTempatk($slug)
         ];
-
         return view('tempat-kuliner/edit', $data);
     }
 
     public function update($id)
     {
+        if ((session()->get('role_id') != 1)) {
+            return redirect()->back();
+        }
         // cek nama
         $tempatkLama = $this->tempatkulinerModel->getTempatk($this->request->getVar('slug'));
         if ($tempatkLama['nama'] == $this->request->getVar('nama')) {

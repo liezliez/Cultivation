@@ -16,12 +16,6 @@ class reviewModel extends Model
 
     /* Fungsi Lain-Lain */
 
-    // Fungsi Search
-    public function search($user_id)
-    {
-        return $this->table('review')->like('user_id', $user_id);
-    }
-
     // Fungsi Get Semua Review Berdasarkan
     public function getAllReview()
     {

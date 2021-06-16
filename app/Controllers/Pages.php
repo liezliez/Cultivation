@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use \App\Models\TempatkulinerModel;
+use \App\Models\KamiModel;
 
 class Pages extends BaseController
 {
 	public function __construct()
 	{
 		$this->tempatkulinerModel = new TempatkulinerModel();
+		$this->kamiModel = new KamiModel();
 	}
 
 	public function home()
@@ -16,6 +18,7 @@ class Pages extends BaseController
 		$data = [
 			'title' => 'Cultivation | Cari Tempat Kulinermu Disini',
 			'tempatkuliner' => $this->tempatkulinerModel->getTempatk(),
+			'tempatkulinerbaru' => $this->tempatkulinerModel->getTempatkBaru(),
 		];
 		return view('/pages/home', $data);
 	}
@@ -51,7 +54,8 @@ class Pages extends BaseController
 	public function tentangKami()
 	{
 		$data = [
-			'title' => 'Cultivation | Tentang Kami'
+			'title' => 'Cultivation | Tentang Kami',
+			'kami' => $this->kamiModel->findAll(),
 		];
 		return view('/pages/tentangkami', $data);
 	}

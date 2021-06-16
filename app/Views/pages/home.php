@@ -59,6 +59,7 @@
                         </div>
                     </div>
                     <div class="row">
+                        <?php $i = 0; ?>
                         <?php foreach ($tempatkuliner as $tempatk) : ?>
                             <?php if ($tempatk['rating'] == 5) { ?>
                                 <div class="col-md-4 col-md-5 col-sm-5">
@@ -78,94 +79,80 @@
                                         </div>
                                     </a>
                                 </div>
-                                <<?php } ?> <?php endforeach; ?> <div class="col-lg-4 col-md-6 col-sm-6">
+                                <?php $i++; ?>
+                                <?php if ($i > 5) {
+                                    break;
+                                } ?>
+                            <?php } ?> <?php endforeach; ?> <div class="col-lg-4 col-md-6 col-sm-6">
+
+                        </div>
+
+
 
                     </div>
-
-
-
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="product__sidebar">
-                <div class="product__sidebar__view">
-                    <div class="section-title">
-                        <h5>Yang Paling Banyak Disukai</h5>
-                    </div>
-                    <ul class="filter__controls">
-                        <!-- <li class="Kenyang" data-filter="*">Day</li>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="product__sidebar">
+                    <div class="product__sidebar__view">
+                        <div class="section-title">
+                            <h5>Yang Paling Banyak Disukai</h5>
+                        </div>
+                        <ul class="filter__controls">
+                            <!-- <li class="Kenyang" data-filter="*">Day</li>
                         <li data-filter=".week">Week</li>
                         <li data-filter=".month">Month</li>
                         <li data-filter=".years">Years</li> -->
-                    </ul>
-                    <div class="filter__gallery">
-                        <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                            <div class="ep">Mulai Dari 12k - 50k</div>
-                            <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                            <h5><a href="#">Shelter</a></h5>
+                        </ul>
+                        <div class="filter__gallery">
+                            <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
+                                <div class="ep">Mulai Dari 12k - 50k</div>
+                                <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
+                                <h5><a href="#">Shelter</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix month week" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
+                                <div class="ep">Mulai Dari 12k - 50k</div>
+                                <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
+                                <h5><a href="#">Southbank</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix week years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
+                                <div class="ep">Mulai Dari 12k - 50k</div>
+                                <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
+                                <h5><a href="#">Sobbers</a></h5>
+
+                            </div>
                         </div>
-                        <div class="product__sidebar__view__item set-bg mix month week" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                            <div class="ep">Mulai Dari 12k - 50k</div>
-                            <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                            <h5><a href="#">Southbank</a></h5>
-                        </div>
-                        <div class="product__sidebar__view__item set-bg mix week years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                            <div class="ep">Mulai Dari 12k - 50k</div>
-                            <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                            <h5><a href="#">Sobbers</a></h5>
+                        <div class="product__sidebar__comment">
+                            <div class="section-title">
+                                <h5>Baru Ditambahkan</h5>
+                            </div>
+                            <?php $i = 0; ?>
+                            <?php foreach ($tempatkulinerbaru as $tempatk) : ?>
+                                <div class="product__sidebar__comment__item">
+                                    <div class="product__sidebar__comment__item__pic">
+                                        <img style="width: 100px;" src="/img/tempat-kuliner/<?php echo $tempatk['gambar'] ?>" alt="">
+                                    </div>
+                                    <div class="product__sidebar__comment__item__text">
+                                        <ul>
+                                            <li><?php echo $tempatk['kategori'] ?></li>
+                                        </ul>
+                                        <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?php echo $tempatk['nama'] ?></a></h5>
+                                        <span><i class="fa fa-star"></i> Rating <?php echo $tempatk['rating'] ?> / 5</span>
+                                    </div>
+                                </div>
+                                <?php $i++; ?>
+                                <?php if ($i > 2) {
+                                    break;
+                                } ?>
+                            <?php endforeach; ?>
+
+
 
                         </div>
-                    </div>
-                    <div class="product__sidebar__comment">
-                        <div class="section-title">
-                            <h5>Riview Terbaru</h5>
-                        </div>
-                        <div class="product__sidebar__comment__item">
-                            <div class="product__sidebar__comment__item__pic">
-                                <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                            </div>
-                            <div class="product__sidebar__comment__item__text">
-                                <ul>
-                                    <li>Kenyang</li>
-                                    <li>Nyaman</li>
-                                </ul>
-                                <h5><a href="#">Ayam Baghdad</a></h5>
-                                <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                            </div>
-                        </div>
-                        <div class="product__sidebar__comment__item">
-                            <div class="product__sidebar__comment__item__pic">
-                                <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                            </div>
-                            <div class="product__sidebar__comment__item__text">
-                                <ul>
-                                    <li>Kenyang</li>
-                                    <li>Nyaman</li>
-                                </ul>
-                                <h5><a href="#">Ayam Baghdad</a></h5>
-                                <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                            </div>
-                        </div>
-                        <div class="product__sidebar__comment__item">
-                            <div class="product__sidebar__comment__item__pic">
-                                <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                            </div>
-                            <div class="product__sidebar__comment__item__text">
-                                <ul>
-                                    <li>Kenyang</li>
-                                    <li>Nyaman</li>
-                                </ul>
-                                <h5><a href="#">Ayam Baghdad</a></h5>
-                                <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 
