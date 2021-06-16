@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class User extends Migration
+class Review extends Migration
 {
 	public function up()
 	{
@@ -15,15 +15,16 @@ class User extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true,
 			],
-			'nama'      => [
-				'type'       	=> 'VARCHAR',
-				'constraint' 	=> '100',
+			'user_id'	=> [
+				'type'           => 'INT',
+				'constraint'     => 11,
+				'unsigned'       => true,
 			],
-			'email' 	=> [
-				'type' 			=> 'VARCHAR',
-				'constraint' 	=> '100',
+			'tempat_kuliner_slug'	=> [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255',
 			],
-			'password' 	=> [
+			'review' 	=> [
 				'type' 			=> 'VARCHAR',
 				'constraint' 	=> '100',
 			],
@@ -37,10 +38,11 @@ class User extends Migration
 			],
 		]);
 		$this->forge->addKey('id', true);
-		$this->forge->createTable('user');
+		$this->forge->createTable('review');
 	}
+
 	public function down()
 	{
-		$this->forge->dropTable('user');
+		$this->forge->dropTable('review');
 	}
 }

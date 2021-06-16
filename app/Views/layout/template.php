@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title; ?></title>
-    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/favicon.png" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,9 +23,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
     <!-- Navbar -->
     <?= $this->include('layout/navbar'); ?>
 
@@ -87,8 +87,12 @@
     <script src="<?php echo base_url('js/jquery.slicknav.js') ?>"></script>
     <script src="<?php echo base_url('js/owl.carousel.min.js') ?>"></script>
     <script src="<?php echo base_url('js/main.js') ?>"></script>
+    <!-- Toastr -->
+    <script src="<?php echo base_url('http://code.jquery.com/jquery-1.9.1.min.js') ?>"></script>
+    <link href="<?php echo base_url('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css') ?>" rel="stylesheet" />
+    <script src="<?php echo base_url('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js') ?>"></script>
 
-    <!-- Script Tambahan Urang -->
+    <!-- Script Tambahan -->
 
     <!-- Buat Priview Gambar di Create -->
     <script>
@@ -105,7 +109,6 @@
             fileGambar.onload = function(e) {
                 gambarPreview.src = e.target.result;
             }
-
         }
     </script>
 

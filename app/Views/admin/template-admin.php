@@ -22,9 +22,12 @@
 </head>
 
 <body>
-
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
     <!-- Navbar -->
-    <?= $this->include('layout/navbar'); ?>
+    <?= $this->include('admin/navbar-admin'); ?>
 
     <!-- content -->
     <?= $this->renderSection('content'); ?>

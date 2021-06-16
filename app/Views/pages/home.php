@@ -3,58 +3,38 @@
 <!DOCTYPE html>
 <html lang="english">
 
-
 <?= $this->section('content'); ?>
 <!-- Hero Section Begin -->
+
+
+
 <section class="hero">
     <div class="container">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="/img/hero/crisbar.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Kenyang</div>
-                            <div class="label">Pedas</div>
-                            <h2> Ayam Geprek Crisbar</h2>
-                            <p> Ayam Geprek Crisbar adalah populer makan yang berfokus pada Ayam
-                                geprek crispy dimana kita dapat memilih sendiri sambal dan topping ..
-                            </p>
-                            <a href="/tempatkuliner.php"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
+            <!-- Hero Tempat Kuliner -->
+            <?php foreach ($tempatkuliner as $tempatk) : ?>
+                <div class="hero__items set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <div class="bg">
+                                    <div class="label"><?php echo $tempatk['kategori'] ?></div>
+                                    <h2><?= $tempatk['nama']; ?></h2>
+                                    <p>
+                                        <?php
+                                        if (strlen($tempatk['deskripsi']) > 120) {
+                                            $deskripsi = substr($tempatk['deskripsi'], 0, 120) . '...';
+                                        }
+                                        echo $deskripsi; ?>
+                                    </p>
+                                    <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="/img/hero/baghdad.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Murah</div>
-                            <div class="label">Kenyang</div>
-                            <h2> Ayam Baghdad</h2>
-                            <p> Setiap Mahasiswa yang sering melewati pengkolan sukabirus pasti
-                                sudah tidak asing lagi dengan populer makan yang satu ini ...
-                            </p>
-                            <a href="#"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Murah</div>
-                            <div class="label">Enak</div>
-                            <div class="label">Akhir Bulan</div>
-                            <h2>Warteg Pengkolan</h2>
-                            <p>Warpeng atau Warteg Pengkolan adalah Warung nasi yang terkenal murah dan enak
-                                bagi para mahasiswa-mahasiswi pecinta masakan tegal. Biasanya warung ini ..
-                            </p>
-                            <a href="#"><span>Detail</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -69,306 +49,104 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-8 col-sm-8">
                             <div class="section-title">
-                                <h4>Populer</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="btn__all">
-                                <a href="#" class="primary-btn">Lihat Semua <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/trending/crisbar-long.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                        <li>Murah</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                        <li>Bersih</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/hero/warteg-pengkolan.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Warteg Pengkolan</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/img/trending/crisbar-long.jpg">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Warteg Pengkolan</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="popular__product">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8">
-                            <div class="section-title">
                                 <h4>Rating Tertinggi</h4>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="btn__all">
-                                <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                <a href="/TempatK/ratingTertinggi" class="primary-btn">Lihat Semua <span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/hero/warteg-pengkolan.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
+                        <?php $i = 0; ?>
+                        <?php foreach ($tempatkuliner as $tempatk) : ?>
+                            <?php if ($tempatk['rating'] == 5) { ?>
+                                <div class="col-md-4 col-md-5 col-sm-5">
+                                    <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
+                                        <div class="product__item">
+                                            <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                                <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
+                                                <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
+                                                <div class="view"><i class="fa fa-star"></i>Rating <?php echo $tempatk['rating']; ?>/5</div>
+                                            </div>
+                                            <div class="product__item__text">
+                                                <ul>
+                                                    <li><?php echo $tempatk['kategori'] ?></li>
+                                                </ul>
+                                                <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?php echo $tempatk['nama'] ?></a></h5>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
+                                <?php $i++; ?>
+                                <?php if ($i > 5) {
+                                    break;
+                                } ?>
+                            <?php } ?> <?php endforeach; ?> <div class="col-lg-4 col-md-6 col-sm-6">
+
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/hero/warteg-pengkolan.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/hero/warteg-pengkolan.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
+
+
 
                     </div>
                 </div>
-                <div class="recent__product">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8">
-                            <div class="section-title">
-                                <h4>Baru Ditambahkan</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="btn__all">
-                                <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/recent/baghdad.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/recent/baghdad.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="<?php echo base_url('/img/recent/baghdad.jpg'); ?>">
-                                    <div class="ep">5k - 20k</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                </div>
-                                <div class="product__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Geprek Crisbar</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
             </div>
             <div class="col-lg-4 col-md-6 col-sm-8">
                 <div class="product__sidebar">
                     <div class="product__sidebar__view">
                         <div class="section-title">
-                            <h5>Paling Sering Dicari</h5>
+                            <h5>Yang Paling Banyak Disukai</h5>
                         </div>
                         <ul class="filter__controls">
-                            <li class="Kenyang" data-filter="*">Day</li>
-                            <li data-filter=".week">Week</li>
-                            <li data-filter=".month">Month</li>
-                            <li data-filter=".years">Years</li>
+                            <!-- <li class="Kenyang" data-filter="*">Day</li>
+                        <li data-filter=".week">Week</li>
+                        <li data-filter=".month">Month</li>
+                        <li data-filter=".years">Years</li> -->
                         </ul>
                         <div class="filter__gallery">
                             <div class="product__sidebar__view__item set-bg mix day years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                                <div class="ep">Sekitar 12k/Menu</div>
+                                <div class="ep">Mulai Dari 12k - 50k</div>
                                 <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                <h5><a href="#">Starbuck</a></h5>
+                                <h5><a href="#">Shelter</a></h5>
                             </div>
                             <div class="product__sidebar__view__item set-bg mix month week" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                                <div class="ep">Sekitar 12k/Menu</div>
+                                <div class="ep">Mulai Dari 12k - 50k</div>
                                 <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                <h5><a href="#">Solaria</a></h5>
+                                <h5><a href="#">Southbank</a></h5>
                             </div>
                             <div class="product__sidebar__view__item set-bg mix week years" data-setbg="<?php echo base_url('/img/hero/baghdad.jpg'); ?>">
-                                <div class="ep">Sekitar 12k/Menu</div>
+                                <div class="ep">Mulai Dari 12k - 50k</div>
                                 <div class="view"><i class="fa fa-star"></i> 6.9/10</div>
-                                <h5><a href="#">Dunkin Donuts</a></h5>
+                                <h5><a href="#">Sobbers</a></h5>
 
                             </div>
                         </div>
                         <div class="product__sidebar__comment">
                             <div class="section-title">
-                                <h5>Riview Terbaru</h5>
+                                <h5>Baru Ditambahkan</h5>
                             </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
+                            <?php $i = 0; ?>
+                            <?php foreach ($tempatkulinerbaru as $tempatk) : ?>
+                                <div class="product__sidebar__comment__item">
+                                    <div class="product__sidebar__comment__item__pic">
+                                        <img style="width: 100px;" src="/img/tempat-kuliner/<?php echo $tempatk['gambar'] ?>" alt="">
+                                    </div>
+                                    <div class="product__sidebar__comment__item__text">
+                                        <ul>
+                                            <li><?php echo $tempatk['kategori'] ?></li>
+                                        </ul>
+                                        <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?php echo $tempatk['nama'] ?></a></h5>
+                                        <span><i class="fa fa-star"></i> Rating <?php echo $tempatk['rating'] ?> / 5</span>
+                                    </div>
                                 </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Baghdad</a></h5>
-                                    <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Baghdad</a></h5>
-                                    <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="<?php echo base_url('/img/sidebar/sidebar-baghdad.jpg'); ?>" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Kenyang</li>
-                                        <li>Nyaman</li>
-                                    </ul>
-                                    <h5><a href="#">Ayam Baghdad</a></h5>
-                                    <span><i class="fa fa-star"></i> 6.900 kali dilihat</span>
-                                </div>
-                            </div>
+                                <?php $i++; ?>
+                                <?php if ($i > 2) {
+                                    break;
+                                } ?>
+                            <?php endforeach; ?>
+
+
 
                         </div>
                     </div>
@@ -377,6 +155,7 @@
         </div>
     </div>
 </section>
-<!-- Product Section End -->
 
+
+<!-- Product Section End -->
 <?= $this->endSection('content'); ?>
