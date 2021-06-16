@@ -27,6 +27,7 @@ class reviewModel extends Model
             ->getResultArray();
     }
 
+<<<<<<< HEAD
     public function getAllReviewBySlug($slug)
     {
         return $this->db->table('review')
@@ -50,6 +51,8 @@ class reviewModel extends Model
         return count($review);
     }
 
+=======
+>>>>>>> parent of 2a617e2 (bingung join table)
 
     //Fungsi Edit User berdasarkan id, berbentuk object
     public function editUser($data)

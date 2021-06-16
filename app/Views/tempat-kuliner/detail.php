@@ -124,7 +124,20 @@ use CodeIgniter\I18n\Time; ?>
                                 <img src="<?php echo base_url('img/user/' . $value['gambar']) ?>" alt="">
                             </div>
                             <div class="anime__review__item__text">
+<<<<<<< HEAD
                                 <h6><?php echo $value['username'] ?></h6>
+=======
+                                <?php $autoload['helpers'] = array('date', 'myhelper'); ?>
+                                <h6><?php echo $value['username'] ?> -
+                                    <span>
+                                        <?php
+                                        // $now = time();
+                                        // $time = Time::parse($value['created_at']);
+                                        // echo $time->humanize();  
+                                        ?>
+                                    </span>
+                                </h6>
+>>>>>>> parent of 2a617e2 (bingung join table)
                                 <p><?php echo $value['review']; ?></p>
                             </div>
                         </div>
