@@ -23,11 +23,11 @@
 
 <body>
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
     <!-- Navbar -->
-    <?= $this->include('layout/navbar-user'); ?>
+    <?= $this->include('admin/navbar-admin'); ?>
 
     <!-- content -->
     <?= $this->renderSection('content'); ?>

@@ -54,7 +54,7 @@
                         <?= csrf_field(); ?>
                         <div class="mb-3">
                             <label for="username" class="form-label"></label>
-                            <input type="text" placeholder="Username" class="form-control" id="username" name="username">
+                            <input type="text" placeholder="Username" class="form-control" id="username" name="username" value="<?php (old('username')) ?>">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label"></label>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label"></label>
-                            <input type="text" placeholder="Email" class="form-control" id="email" name="email">
+                            <input type="text" placeholder="Email" class="form-control" id="email" name="email" value="<?php (old('email')) ?>">
                         </div>
                         <!-- Gambar -->
                         <div class="form-group row">

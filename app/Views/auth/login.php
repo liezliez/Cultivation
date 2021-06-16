@@ -52,7 +52,7 @@
                         <form method="post" action="<?= base_url(); ?>/login/process">
                             <?= csrf_field(); ?>
                             <div class="mb-3">
-                                <input type="text" name="username" id="username" placeholder="Username" class="form-control" required autofocus>
+                                <input type="text" name="email" id="email" placeholder="email" class="form-control" required autofocus>
                             </div>
                             <div class="mb-3">
                                 <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
@@ -60,7 +60,7 @@
                             <button type="submit" class="site-btn">Login</button>
                         </form>
                     </main>
-                    <a href="#" class="forget_pass">Lupa Password</a>
+                    <!-- <a href="#" class="forget_pass">Lupa Password</a> -->
                 </div>
             </div>
             <div class="col-lg-6">

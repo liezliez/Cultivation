@@ -11,48 +11,54 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <!-- QUERY NAVBAR -->
+                            <!-- Check NAVBAR -->
 
                             <li><a href="/">Homepage</a></li>
                             <li><a href="/tempat-kuliner">Tempat Kuliner</a></li>
-                            <li><a href="./categories.html">Kategori <span class="arrow_carrot-down"></span></a>
+                            <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 1)) {
+                                echo
+                                '<li><a href="/user">User</a></li>
+                                 <li><a href="/feedback">Feedback</a></li>';
+                            } ?>
+                            <li><a href="./categories.html">Daya Tarik<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
-                                    <li><a href="./categories.html">Murah</a></li>
-                                    <li><a href="./anime-details.html">Kenyang</a></li>
-                                    <li><a href="./anime-watching.html">Mewah</a></li>
-                                    <li><a href="./blog-details.html">Pedas</a></li>
-                                    <li><a href="./signup.html">Cepat Saji</a></li>
-                                    <li><a href="./login.html">populer Nongkrong</a></li>
+                                    <li><a href="/TempatK/murah">Murah</a></li>
+                                    <li><a href="/TempatK/bersih">Bersih</a></li>
+                                    <li><a href="/TempatK/enak">Enak</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/tentang-kami">Tentang Kami</a></li>
+                            <?php if ((session()->get('logged_in') == true) && (session()->get('role_id') == 2)) {
+                                echo
+                                '<li><a href="/tentang-kami">Tentang Kami</a></li>';
+                            } ?>
+
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="header__right">
-                    <?php
-                    $username = session()->get('username');
-                    if (session()->get('logged_in') == true) {
-                        echo '<a href="/profile" class="ml-1">' . $username . ' | </a> <br>
-                              <a href="/logout" class="logout">Logout <span class="fa fa-sign-out"></span></a>';
-                    } else {
-                        echo '<a href="/login" class="login-switch ml-4 mr-0">Login | Sign-up <span class="icon_profile"></a>';
-                    } ?>
 
-
-                </div>
-            </div>
-            <!-- <div class="col-lg-3">
-                <div class="header__right">
-                    <a href="/login" class="login-switch ml-4 mr-0">Login | Sign-up <span class="icon_profile"></a>
-                </div>
-            </div> -->
+            <?php
+            $username = session()->get('username');
+            if (session()->get('logged_in') == true) {
+                echo '
+                        <div class="col-lg-2">
+                            <div class="header__right">
+                                <a href="/profile" class="ml-1">' . $username . ' | </a> <br>
+                                <a href="/logout" class="logout">Logout <span class="fa fa-sign-out"></span></a>
+                            </div>
+                        </div>';
+            } else {
+                echo '
+                        <div class="col-lg-2">
+                            <div class="header__right">
+                                <a href="/login" class="login-switch ml-4 mr-0">Login | Sign-up <span class="icon_profile"></a>
+                            </div>
+                        </div>';
+            } ?>
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>
@@ -70,7 +76,7 @@
         });
     </script>
 
-    <!-- Silahkan Login Message -->
+    <!-- Script Silahkan Login Message -->
     <?php
     $message = session()->getFlashdata('larangan');
     function IsNullOrEmptyString($str)
