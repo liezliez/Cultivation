@@ -16,7 +16,10 @@ class tempatkulinerModel extends Model
         'harga_min',    'harga_max',
         'jam_buka',     'jam_tutup',
     ];
-
+    public function search($nama)
+    {
+        return $this->table('tempatkuliner')->like('nama', $nama);
+    }
     public function getAllTempatk()
     {
         return $this->findAll();

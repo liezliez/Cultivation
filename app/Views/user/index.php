@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
                 <div class="section-title">
                     <h4 style="margin-top: 32px;">Daftar User</h4>
                 </div>
@@ -34,13 +34,14 @@
                     <div class="card-header">
                         <!-- <h3 class="card-title" style="font-family: Oswald, sans-serif;">Data User</h3> -->
                         <div class="card-tools">
-                            <div class="input-group input-group-md">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Cari Username">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-secondary">Temukan
-                                    </button>
+                            <form action="" method="GET">
+                                <div class="input-group input-group-md">
+                                    <input type="text" name="keyword" class="form-control float-right" placeholder="Cari Username">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-secondary" name="submit">Temukan</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -48,39 +49,44 @@
                         <table class="table table-striped table-dark table-head-fixed text-nowrap">
                             <thead class="thead-dark ">
                                 <tr>
-                                    <th style="width: 70px;">No</th>
-                                    <th style="width: 70px;">ID</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
+                                    <th scope="col" style="width: 70px;">No</th>
+                                    <th scope="col" style="width: 70px;">ID</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Status</th>
                                     <th>
                                         Aksi
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1;
-                                foreach ($users as $key => $value) { ?>
+                                <!-- Penomoran Pagination -->
+                                <?php $i = 1 + (5 * ($currentPage - 1)); ?>
+                                <?php foreach ($users as $u) : ?>
                                     <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $value['id']; ?></td>
-                                        <td><?= $value['username']; ?></td>
-                                        <td><?= $value['email']; ?></td>
-                                        <td><?= ($value['role_id'] == 1) ? 'admin' : 'user'; ?></td>
-                                        <td><?= ($value['active'] == 1) ? 'aktif' : 'non-aktif'; ?></td>
+                                        <th scope="row"><?= $i++; ?></th>
+                                        <td><?= $u['id']; ?></td>
+                                        <td><?= $u['username']; ?></td>
+                                        <td><?= $u['email']; ?></td>
+                                        <td><?= ($u['role_id'] == 1) ? 'admin' : 'user'; ?></td>
+                                        <td><?= ($u['active'] == 1) ? 'aktif' : 'non-aktif'; ?></td>
                                         <td>
-                                            <button class="btn btn-secondary" data-toggle="modal" data-target="#edit<?= $value['id']; ?>"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-secondary" data-toggle="modal" data-target="#delete<?= $value['id']; ?>"><i class="fa fa-trash"></i></button>
+                                            <button class="btn btn-secondary" data-toggle="modal" data-target="#edit<?= $u['id']; ?>"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-secondary" data-toggle="modal" data-target="#delete<?= $u['id']; ?>"><i class="fa fa-trash"></i></button>
                                         </td>
                                     </tr>
-                                <?php }  ?>
+                                <?php endforeach;  ?>
                             </tbody>
                         </table>
-
+                        <div class="pagination mb-2">
+                            <?= $pager->links('users', 'user_pagination'); ?>
+                        </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 

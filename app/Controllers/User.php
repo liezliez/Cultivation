@@ -15,34 +15,32 @@ class User extends BaseController
 
     public function index()
     {
-        $data['title'] = 'Cultivation | Homepage';
+
+        /* // Pagination nomor/*  */
+        $currentPage = $this->request->getVar('page_user') ? $this->request->getVar('page_user') :
+            1;
+
+        // Searching
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $users = $this->usersModel->search($keyword);
+        } else {
+            $users = $this->usersModel;
+        }
+
+        $data = [
+            'title' => 'Cultivation | Homepage',
+            'users' => $users->paginate(5, 'users'),
+            'pager' => $this->usersModel->pager,
+            'currentPage' => $currentPage,
+
+        ];
+
         $data['user'] = [
             'username' => session()->get('username'),
             'email' => session()->get('email'),
         ];
-        $data['users'] = $this->usersModel->getAllUsers();
-
         return view('user/index', $data);
-
-
-        /* // Pagination nomor
-        $currentPage = $this->request->getVar('page_user') ? $this->request->getVar('page_user') :
-            1;
-        // Searching
-        $keyword = $this->request->getVar('keyword');
-        if ($keyword) {
-            $user = $this->userModel->search($keyword);
-        } else {
-            $user = $this->userModel;
-        }
-        $data = [
-            'title' => 'Daftar User',
-            'user' => $user->paginate(8, 'user'),
-            'pager' => $this->userModel->pager,
-            'currentPage' => $currentPage
-        ];
-
-        return view('user/index', $data); */
     }
 
     public function editUser($id_user)

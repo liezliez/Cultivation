@@ -11,7 +11,7 @@ class usersModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['username', 'email', 'password', 'gambar', 'role_id', 'active'];
     protected $primaryKey = "id";
-    protected $returnType = "object";
+    // protected $returnType = "object";
 
     /* Fungsi Lain-lain */
     public function search($keyword)
