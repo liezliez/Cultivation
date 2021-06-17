@@ -16,12 +16,9 @@ class tempatkulinerModel extends Model
         'harga_min',    'harga_max',
         'jam_buka',     'jam_tutup',
     ];
-    public function search($keyword)
+    public function search($nama)
     {
-        return $this->db->table('tempatkuliner')
-            ->like('nama', $keyword)
-            ->get()
-            ->getResultArray();
+        return $this->table('tempatkuliner')->like('nama', $nama);
     }
     public function getAllTempatk()
     {
@@ -33,14 +30,6 @@ class tempatkulinerModel extends Model
             return $this->findAll();
         }
         return $this->where(['slug' => $slug])->first();
-    }
-
-    public function getTempatkBaru()
-    {
-        return $this->db->table('tempatkuliner')
-            ->orderBy('created_at', 'DESC')
-            ->get()
-            ->getResultArray();
     }
     public function getTempatkByRating()
     {

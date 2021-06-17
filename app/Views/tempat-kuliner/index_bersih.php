@@ -42,6 +42,7 @@
             </div>
 
             <!-- List Daftar Tempat Kuliner -->
+
             <div class="trending__product">
                 <div class="row">
                     <?php $i = 1; ?>
@@ -53,13 +54,8 @@
                                         <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
                                             <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
                                             <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
-                                            <?php $rate = $tempatk['rating']; ?>
-                                            <div class="view">
-                                                <?php for ($x = 0; $x < $rate; $x++) { ?>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                <?php } ?>
-                                                Rating <?php echo $tempatk['rating']; ?>/5
-                                            </div>
+                                            <div class="view"><i class="fa fa-star">
+                                                </i> Rating <?php echo $tempatk['rating']; ?>/5</div>
                                         </div>
                                         <div class="product__item__text">
                                             <ul>
@@ -70,7 +66,7 @@
                                     </a>
                                 </div>
                             </div>
-                        <?php } ?> <?php endforeach; ?>
+                            <<?php } ?> <?php endforeach; ?> </div>
                 </div>
             </div>
         </div>

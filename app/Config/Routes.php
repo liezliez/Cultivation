@@ -50,15 +50,6 @@ $routes->get('/admin', 'Admin::index');
 // logout
 $routes->get('/logout', 'Login::logout');
 
-<<<<<<< HEAD
-// signup
-$routes->get('/register', 'Register::index');
-$routes->post('/register/process', 'Register::process');
-
-// $routes->get('/signup', 'Pages::signup');
-=======
->>>>>>> parent of 04cdefb (Merge branch 'hanif' into main)
-
 
 /* Tempat Kuliner Function */
 

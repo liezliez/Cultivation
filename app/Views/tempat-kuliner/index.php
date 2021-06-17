@@ -36,36 +36,28 @@
                                 </div> ';
                     }
                     ?>
-                    <form action="" method="GET">
-                        <div class="input-group input-group-md mt-3">
-                            <input type="text" name="keyword" class="form-control float-right" placeholder="Cari Tempat Kuliner">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-danger" name="submit">Temukan</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
 
             <!-- List Daftar Tempat Kuliner -->
             <div class="trending__product">
                 <div class="row">
-                    <?php foreach ($tempatk as $tk) : ?>
+                    <?php foreach ($tempatk as $tempatk) : ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <a href="/tempat-kuliner/<?= $tk['slug']; ?>">
-                                    <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tk['gambar']; ?>">
-                                        <div class="ep">Rp.<?php echo $tk['harga_min'] ?> - <?php echo $tk['harga_max'] ?></div>
+                                <a href="/tempat-kuliner/<?= $tempatk['slug']; ?>">
+                                    <div class="product__item__pic set-bg" data-setbg="/img/tempat-kuliner/<?= $tempatk['gambar']; ?>">
+                                        <div class="ep">Rp.<?php echo $tempatk['harga_min'] ?> - <?php echo $tempatk['harga_max'] ?></div>
                                         <!-- <div class="comment"><i class="fa fa-comments"></i></div> -->
                                         <div class="view">
-                                            <i class="fa fa-star"></i> Rating <?php echo $tk['rating']; ?>/5
+                                            <i class="fa fa-star"></i> Rating <?php echo $tempatk['rating']; ?>/5
                                         </div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
-                                            <li><?php echo $tk['kategori'] ?></li>
+                                            <li><?php echo $tempatk['kategori'] ?></li>
                                         </ul>
-                                        <h5><a href="/tempat-kuliner/<?= $tk['slug']; ?>"><?= $tk['nama']; ?></a></h5>
+                                        <h5><a href="/tempat-kuliner/<?= $tempatk['slug']; ?>"><?= $tempatk['nama']; ?></a></h5>
                                     </div>
                                 </a>
                             </div>
