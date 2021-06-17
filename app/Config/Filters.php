@@ -63,6 +63,7 @@ class Filters extends BaseConfig
 					'register', 'register/*',
 					'tentang-kami',
 					'tempat-kuliner',
+					'feedback', 'feedback/*'
 				]
 			],
 		],
