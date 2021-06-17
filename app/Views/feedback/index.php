@@ -36,7 +36,7 @@
                         <div class="card-tools">
                             <form action="" method="GET">
                                 <div class="input-group input-group-md">
-                                    <input type="text" name="keyword" class="form-control float-right" placeholder="Cari Username">
+                                    <input type="text" name="keyword" class="form-control float-right" placeholder="Cari Feedback">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-secondary" name="submit">Temukan</button>
                                     </div>
@@ -51,10 +51,8 @@
                                 <tr>
                                     <th scope="col" style="width: 70px;">No</th>
                                     <th scope="col" style="width: 70px;">ID</th>
-                                    <th scope="col">Username</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Role</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Feedback</th>
                                     <th>
                                         Aksi
                                     </th>
@@ -63,14 +61,12 @@
                             <tbody>
                                 <!-- Penomoran Pagination -->
                                 <?php $i = 1 + (5 * ($currentPage - 1)); ?>
-                                <?php foreach ($users as $u) : ?>
+                                <?php foreach ($feedback as $u) : ?>
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $u['id']; ?></td>
-                                        <td><?= $u['username']; ?></td>
                                         <td><?= $u['email']; ?></td>
-                                        <td><?= ($u['role_id'] == 1) ? 'admin' : 'user'; ?></td>
-                                        <td><?= ($u['active'] == 1) ? 'aktif' : 'non-aktif'; ?></td>
+                                        <td><?= $u['feedback']; ?></td>
                                         <td>
                                             <button class="btn btn-secondary" data-toggle="modal" data-target="#edit<?= $u['id']; ?>"><i class="fa fa-pencil"></i></button>
                                             <button class="btn btn-secondary" data-toggle="modal" data-target="#delete<?= $u['id']; ?>"><i class="fa fa-trash"></i></button>
@@ -80,7 +76,7 @@
                             </tbody>
                         </table>
                         <div class="pagination mb-2">
-                            <?= $pager->links('users', 'user_pagination'); ?>
+                            <?= $pager->links('feedback', 'user_pagination'); ?>
                         </div>
                     </div>
                 </div>
@@ -91,7 +87,7 @@
     </div>
 
     <!-- Modal Edit -->
-    <?php foreach ($users as $key => $value) { ?>
+    <?php foreach ($feedback as $key => $value) { ?>
         <div class="modal fade" id="edit<?= $value['id']; ?>">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -104,21 +100,18 @@
                     <?php echo form_open('user/editUser/' . $value['id']) ?>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Username</label>
-                            <input name="username" value="<?= $value['username']; ?>" class="form-control" placeholder="Username">
-                        </div>
-                        <div class="form-group">
                             <label>Email</label>
                             <input name="email" value="<?= $value['email']; ?>" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label>Role</label>
-                            <input name="role_id" value="<?= $value['role_id']; ?>" class="form-control" placeholder="role_id">
+                            <label>Feedback</label>
+                            <input name="feedback" value="<?= $value['feedback']; ?>" class="form-control" placeholder="feedback">
                         </div>
                         <div class="form-group">
-                            <label>Status</label>
-                            <input name="active" value="<?= $value['active']; ?>" class="form-control" placeholder="'1': aktif, '0':nonaktif">
+                            <label>tanggal</label>
+                            <input name="tanggal" value="<?= $value['tanggal']; ?>" class="form-control" placeholder="tanggal">
                         </div>
+
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
@@ -133,7 +126,7 @@
         <!-- /.modal -->
     <?php }  ?>
     <!-- Modal delete -->
-    <?php foreach ($users as $key => $value) { ?>
+    <?php foreach ($feedback as $key => $value) { ?>
         <div class="modal fade" id="delete<?= $value['id']; ?>">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -144,10 +137,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Apakah anda ingin menghapus <b><?= $value['username']; ?></b> ?
+                        Apakah anda ingin menghapus feedback dari <b><?= $value['email']; ?></b> ?
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <a href="<?= base_url('user/deleteUser/' . $value['id']) ?>" class="btn btn-primary btn-danger">Delete</a>
+                            <button type="submit" class="btn btn-primary btn-danger">Delete</button>
                         </div>
                     </div>
                 </div>

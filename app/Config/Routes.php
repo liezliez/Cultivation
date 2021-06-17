@@ -50,6 +50,11 @@ $routes->get('/admin', 'Admin::index');
 // logout
 $routes->get('/logout', 'Login::logout');
 
+// signup
+$routes->get('/register', 'Register::index');
+$routes->post('/register/process', 'Register::process');
+
+// $routes->get('/signup', 'Pages::signup');
 
 /* Tempat Kuliner Function */
 
