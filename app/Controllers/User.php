@@ -59,13 +59,24 @@ class User extends BaseController
         return redirect()->to(base_url('user'));
     }
 
-    public function deleteUser($id_user)
+    // public function deleteUser($id_user)
+    // {
+    //     $data = [
+    //         'id' => $id_user
+    //     ];
+    //     $this->usersModel->deleteUser($data);
+    //     session()->setFlashdata('delete', 'data berhasil didelete');
+    //     return redirect()->to(base_url('user'));
+    // }
+
+    public function deleteUser($id)
     {
         $data = [
-            'id' => $id_user,
+            'id' => $id,
         ];
+        // hapus data di database
         $this->usersModel->deleteUser($data);
-        session()->setFlashdata('delete', 'data berhasil didelete');
-        return redirect()->to(base_url('user'));
+        session()->setFlashdata('pesan', 'Data berhasil dihapus');
+        return redirect()->to('/user');
     }
 }
