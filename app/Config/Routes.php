@@ -56,7 +56,6 @@ $routes->post('/register/process', 'Register::process');
 
 // $routes->get('/signup', 'Pages::signup');
 
-
 /* Tempat Kuliner Function */
 
 $routes->get('/tempat-kuliner/tambah', 'Tempatk::create');
