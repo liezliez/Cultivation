@@ -147,7 +147,7 @@
                         Apakah anda ingin menghapus <b><?= $value['username']; ?></b> ?
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary btn-danger">Delete</button>
+                            <a href="<?= base_url('user/deleteUser/' . $value['id']) ?>" class="btn btn-primary btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

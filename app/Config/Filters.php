@@ -44,28 +44,27 @@ class Filters extends BaseConfig
 					'tempat-kuliner'
 				]
 			],
-			'usersAuth' =>
-			[
-				'except' =>
-				[
-					'login', 'login/*',
-					'register', 'register/*',
-					'/',
-					'tentang-kami',
-					'tempat-kuliner'
-				]
-			],
-			'adminsAuth' =>
-			[
-				'except' =>
-				[
-					'login', 'login/*',
-					'register', 'register/*',
-					'tentang-kami',
-					'tempat-kuliner',
-					'feedback', 'feedback/*'
-				]
-			],
+			// 'usersAuth' =>
+			// [
+			// 	'except' =>
+			// 	[
+			// 		'login', 'login/*',
+			// 		'register', 'register/*',
+			// 		'/',
+			// 		'tentang-kami',
+			// 		'tempat-kuliner'
+			// 	]
+			// ],
+			// 'adminsAuth' =>
+			// [
+			// 	'except' =>
+			// 	[
+			// 		'login', 'login/*',
+			// 		'register', 'register/*',
+			// 		'tentang-kami',
+			// 		'tempat-kuliner',
+			// 	]
+			// ],
 		],
 		'after'  => [
 			'toolbar',
