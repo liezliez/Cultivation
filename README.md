@@ -25,3 +25,19 @@ Codeigniter 4 https://codeigniter.com/download
 # Deskripsi Arsitektural
 ![arsi](https://user-images.githubusercontent.com/42132479/116041203-240c7200-a697-11eb-9e17-9a12f57f32cd.png)
 
+# Tampilan Aplikasi!  
+  
+![screencapture-localhost-8080-2021-06-25-16_24_55](https://user-images.githubusercontent.com/42132479/123402812-56bce300-d5d2-11eb-9ce4-af17b8f059fd.png)
+Homepage
+
+![screencapture-localhost-8080-login-2021-06-25-16_25_27](https://user-images.githubusercontent.com/42132479/123402736-3f7df580-d5d2-11eb-9c10-e9e3afe64954.png)  
+Login Page
+
+![screencapture-localhost-8080-tempat-kuliner-ayam-baghdad-2021-06-25-16_25_59](https://user-images.githubusercontent.com/42132479/123402868-650aff00-d5d2-11eb-9677-623858553213.png)
+Detail Tempat Kuliner
+
+![screencapture-localhost-8080-user-2021-06-25-16_26_23](https://user-images.githubusercontent.com/42132479/123402913-705e2a80-d5d2-11eb-981e-840730b1c3ed.png)
+Admin's User Page
+
+
+
