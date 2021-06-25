@@ -19,6 +19,9 @@ Perangkat lunak ini juga membutuhkan adanya maintenance pada sisi server dan cli
 Front-End development : HTML, CSS, JAVASCRIPT  
 Scripting : PHP  
 
+# Framework
+Codeigniter 4 https://codeigniter.com/download
+
 # Deskripsi Arsitektural
 ![arsi](https://user-images.githubusercontent.com/42132479/116041203-240c7200-a697-11eb-9e17-9a12f57f32cd.png)
 
